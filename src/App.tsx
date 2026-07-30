@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
@@ -12,28 +11,9 @@ import { Certifications } from "@/components/sections/Certifications";
 import { LanguagesSection } from "@/components/sections/LanguagesSection";
 import { WhyHire } from "@/components/sections/WhyHire";
 import { Contact } from "@/components/sections/Contact";
+import { Toaster } from "@/components/ui/sonner";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Belgin's Portfolio" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Belgin Lino SP — aspiring software developer building Python, web and automation projects. Open to opportunities in India and Germany.",
-      },
-      { property: "og:title", content: "Belgin Lino SP — Aspiring Software Developer" },
-      {
-        property: "og:description",
-        content:
-          "Python · React · Django · Automation. Real projects, clean code, and a passion for solving real-world problems.",
-      },
-    ],
-  }),
-  component: Index,
-});
-
-function Index() {
+export default function App() {
   return (
     <div className="relative min-h-screen bg-background text-foreground">
       <Navbar />
@@ -51,6 +31,7 @@ function Index() {
       </main>
       <Footer />
       <BackToTop />
+      <Toaster />
     </div>
   );
 }
