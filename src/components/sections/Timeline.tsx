@@ -7,7 +7,11 @@ export function Timeline() {
     <Section
       id="timeline"
       eyebrow="Journey"
-      title={<>My <span className="text-gradient">path so far</span></>}
+      title={
+        <>
+          My <span className="text-gradient">path so far</span>
+        </>
+      }
       description="A snapshot of how I've grown as a developer."
     >
       <div className="relative mx-auto max-w-3xl">

@@ -10,7 +10,14 @@ interface SectionProps {
   className?: string;
 }
 
-export function Section({ id, eyebrow, title, description, children, className = "" }: SectionProps) {
+export function Section({
+  id,
+  eyebrow,
+  title,
+  description,
+  children,
+  className = "",
+}: SectionProps) {
   return (
     <section id={id} className={`relative py-20 sm:py-28 ${className}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -8,7 +8,11 @@ export function Certifications() {
     <Section
       id="certifications"
       eyebrow="Certifications"
-      title={<>Learning <span className="text-gradient">credentials</span></>}
+      title={
+        <>
+          Learning <span className="text-gradient">credentials</span>
+        </>
+      }
       description="Continuously upskilling through structured courses and workshops."
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

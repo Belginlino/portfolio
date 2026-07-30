@@ -5,8 +5,18 @@ import { personalInfo, stats } from "@/data/portfolio";
 import { useCountUp } from "@/hooks/use-count-up";
 import { Briefcase, GraduationCap, MapPin, Plane } from "lucide-react";
 
-function StatCard({ value, suffix, label, delay, inView }: {
-  value: number; suffix: string; label: string; delay: number; inView: boolean;
+function StatCard({
+  value,
+  suffix,
+  label,
+  delay,
+  inView,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+  delay: number;
+  inView: boolean;
 }) {
   const count = useCountUp(value, 1500, inView);
   return (
@@ -35,7 +45,11 @@ export function About() {
     <Section
       id="about"
       eyebrow="About"
-      title={<>A bit about <span className="text-gradient">me</span></>}
+      title={
+        <>
+          A bit about <span className="text-gradient">me</span>
+        </>
+      }
       description="Driven by curiosity, focused on building things that work."
     >
       <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
@@ -50,7 +64,8 @@ export function About() {
           <p>
             I love exploring <span className="text-foreground font-medium">new technologies</span>,{" "}
             <span className="text-foreground font-medium">building impactful projects</span> and{" "}
-            <span className="text-foreground font-medium"></span>turning ideas into real applications.
+            <span className="text-foreground font-medium"></span>turning ideas into real
+            applications.
           </p>
 
           <ul className="grid gap-3 pt-4 sm:grid-cols-2">

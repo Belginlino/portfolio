@@ -13,7 +13,10 @@ export function Hero() {
     >
       {/* Aurora background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-aurora" />
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 grid-pattern opacity-40" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 grid-pattern opacity-40"
+      />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -22,8 +25,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-           
-
             <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               Hi, I'm <span className="text-gradient">Belgin Lino</span>.
               <br />

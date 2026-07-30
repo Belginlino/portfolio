@@ -8,7 +8,11 @@ export function LanguagesSection() {
     <Section
       id="languages"
       eyebrow="Languages"
-      title={<>I speak <span className="text-gradient">multiple languages</span></>}
+      title={
+        <>
+          I speak <span className="text-gradient">multiple languages</span>
+        </>
+      }
       description="Bridging cultures across India and Germany."
     >
       <div className="grid gap-5 sm:grid-cols-3">

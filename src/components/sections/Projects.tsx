@@ -26,7 +26,11 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Projects"
-      title={<>Selected <span className="text-gradient">work</span></>}
+      title={
+        <>
+          Selected <span className="text-gradient">work</span>
+        </>
+      }
       description="Real projects, real problems, and the lessons that came with them."
     >
       <div className="mb-10 flex flex-wrap justify-center gap-2">
@@ -78,7 +82,9 @@ export function Projects() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-xl font-semibold tracking-tight">{p.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.short}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {p.short}
+                </p>
 
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {p.tech.slice(0, 4).map((t) => (

@@ -10,7 +10,11 @@ export function WhyHire() {
     <Section
       id="why"
       eyebrow="Why hire me"
-      title={<>What I bring to the <span className="text-gradient">team</span></>}
+      title={
+        <>
+          What I bring to the <span className="text-gradient">team</span>
+        </>
+      }
       description="Mindset and habits I've built while learning to ship real projects."
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { skills } from "@/data/portfolio";
-import {
-  Code2, Layout, Server, Database, Wrench, Sparkles,
-} from "lucide-react";
+import { Code2, Layout, Server, Database, Wrench, Sparkles } from "lucide-react";
 
 const icons = [Code2, Layout, Server, Database, Wrench, Sparkles];
 
@@ -12,7 +10,11 @@ export function Skills() {
     <Section
       id="skills"
       eyebrow="Skills"
-      title={<>Tools I <span className="text-gradient">work with</span></>}
+      title={
+        <>
+          Tools I <span className="text-gradient">work with</span>
+        </>
+      }
       description="A growing toolkit across languages, frameworks, and automation."
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -2,11 +2,7 @@ import resumePdf from "@/assets/belgin resume.pdf";
 export const personalInfo = {
   name: "Belgin Lino SP",
   shortName: "Belgin",
-  roles: [
-    "Aspiring AI Engineer",
-    "FullStack Developer",
-    "AI project Builder"
-  ],
+  roles: ["Aspiring AI Engineer", "FullStack Developer", "AI project Builder"],
   tagline: "Aspiring Software Developer · Python · Web · Automation",
   bio: "I'm Belgin Lino, an AI student and aspiring Fullstack developer passionate about building practical solutions through technology. I enjoy working with Python, web development, and AI projects that solve real-world problems,and I like learning new technologies.",
   longBio:
@@ -21,7 +17,7 @@ export const personalInfo = {
 export const stats = [
   { label: "Projects Built", value: 5, suffix: "+" },
   { label: "Tech Skills", value: 10, suffix: "+" },
-  { label: "Learning hours", value:100 , suffix: "+" },
+  { label: "Learning hours", value: 100, suffix: "+" },
   { label: "Open to Internships", value: 100, suffix: "%" },
 ];
 
@@ -173,22 +169,26 @@ export const timeline = [
   {
     year: "2024",
     title: "Learned Python Full Stack",
-    description: "Learned Python fundamentals and started upskilling by exploring Python full-stack development.",
+    description:
+      "Learned Python fundamentals and started upskilling by exploring Python full-stack development.",
   },
   {
     year: "2024",
     title: "Built First Web Projects",
-    description: "Created projects using HTML, CSS, and JavaScript, and explored backend development with Flask and Django.",
+    description:
+      "Created projects using HTML, CSS, and JavaScript, and explored backend development with Flask and Django.",
   },
   {
     year: "2025",
     title: "Learned React JS",
-    description: "During my 3rd semester holidays, I attended a one-month internship training where I started learning React JS as an upgrade.",
+    description:
+      "During my 3rd semester holidays, I attended a one-month internship training where I started learning React JS as an upgrade.",
   },
   {
     year: "2025",
     title: "Built Projects with AI",
-    description: "Learned and implemented web projects using AI, and attended several hackathons where I explored various automation tools.",
+    description:
+      "Learned and implemented web projects using AI, and attended several hackathons where I explored various automation tools.",
   },
   {
     year: "2026",
@@ -213,28 +213,28 @@ export const languages = [
 ];
 
 export const strengths = [
-  { 
-    title: "Fast Learner", 
-    description: "Quickly adapt to new technologies." 
+  {
+    title: "Fast Learner",
+    description: "Quickly adapt to new technologies.",
   },
-  { 
-    title: "Full Stack Foundation", 
-    description: "Built projects using HTML, CSS, JavaScript, Flask, Django, and React." 
+  {
+    title: "Full Stack Foundation",
+    description: "Built projects using HTML, CSS, JavaScript, Flask, Django, and React.",
   },
-  { 
-    title: "AI Enthusiast", 
-    description: "Exploring and implementing AI concepts in real-world web projects." 
+  {
+    title: "AI Enthusiast",
+    description: "Exploring and implementing AI concepts in real-world web projects.",
   },
-  { 
-    title: "Project-Oriented Developer", 
-    description: "Focused on building complete, working applications rather than just theory." 
+  {
+    title: "Project-Oriented Developer",
+    description: "Focused on building complete, working applications rather than just theory.",
   },
-  { 
-    title: "Problem Solving Skills", 
-    description: "Break down problems logically and implement efficient solutions in code." 
+  {
+    title: "Problem Solving Skills",
+    description: "Break down problems logically and implement efficient solutions in code.",
   },
-  { 
-    title: "Continuous Learner", 
-    description: "Actively improving skills and preparing for global tech opportunities." 
+  {
+    title: "Continuous Learner",
+    description: "Actively improving skills and preparing for global tech opportunities.",
   },
 ];

@@ -23,7 +23,8 @@ export function Footer() {
               </span>
             </a>
             <p className="mt-3 max-w-sm text-sm text-muted-foreground">
-              Aspiring software developer building real-world apps and automations with Python, React and AI.
+              Aspiring software developer building real-world apps and automations with Python,
+              React and AI.
             </p>
           </div>
 
@@ -75,7 +76,8 @@ export function Footer() {
             © 2026 {personalInfo.name}. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built with <span className="text-foreground">React</span>, <span className="text-foreground">Tailwind</span> &{" "}
+            Built with <span className="text-foreground">React</span>,{" "}
+            <span className="text-foreground">Tailwind</span> &{" "}
             <span className="text-foreground">Framer Motion</span>.
           </p>
         </div>

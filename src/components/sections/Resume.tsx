@@ -3,18 +3,18 @@ import { Download, Eye, FileText, CheckCircle2 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { personalInfo } from "@/data/portfolio";
 
-const highlights = [
-  "Web Developer",
-  "Project Experience",
-  " Openness to Experience",
-];
+const highlights = ["Web Developer", "Project Experience", " Openness to Experience"];
 
 export function Resume() {
   return (
     <Section
       id="resume"
       eyebrow="Resume"
-      title={<>Grab my <span className="text-gradient">resume</span></>}
+      title={
+        <>
+          Grab my <span className="text-gradient">resume</span>
+        </>
+      }
       description="A concise overview of my skills, projects, and journey so far."
     >
       <motion.div

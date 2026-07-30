@@ -65,7 +65,11 @@ export function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title={<>Let's <span className="text-gradient">build something</span></>}
+      title={
+        <>
+          Let's <span className="text-gradient">build something</span>
+        </>
+      }
       description="Have a project, an opportunity, or just want to say hi? I'd love to hear from you."
     >
       <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
@@ -77,9 +81,19 @@ export function Contact() {
           className="space-y-4"
         >
           {[
-            { Icon: Mail, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
+            {
+              Icon: Mail,
+              label: "Email",
+              value: personalInfo.email,
+              href: `mailto:${personalInfo.email}`,
+            },
             { Icon: Github, label: "GitHub", value: "@belginlino", href: personalInfo.github },
-            { Icon: Linkedin, label: "LinkedIn", value: "Belgin Lino SP", href: personalInfo.linkedin },
+            {
+              Icon: Linkedin,
+              label: "LinkedIn",
+              value: "Belgin Lino SP",
+              href: personalInfo.linkedin,
+            },
             { Icon: MapPin, label: "Location", value: personalInfo.location },
           ].map(({ Icon, label, value, href }) => {
             const inner = (
@@ -94,7 +108,13 @@ export function Contact() {
               </div>
             );
             return href ? (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="block">
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
                 {inner}
               </a>
             ) : (
@@ -113,7 +133,10 @@ export function Contact() {
         >
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
-              <label htmlFor="name" className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <label
+                htmlFor="name"
+                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              >
                 Name
               </label>
               <input
@@ -127,7 +150,10 @@ export function Contact() {
               {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
             </div>
             <div>
-              <label htmlFor="email" className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              <label
+                htmlFor="email"
+                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              >
                 Email
               </label>
               <input
@@ -143,7 +169,10 @@ export function Contact() {
             </div>
           </div>
           <div className="mt-5">
-            <label htmlFor="message" className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <label
+              htmlFor="message"
+              className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            >
               Message
             </label>
             <textarea
@@ -165,11 +194,17 @@ export function Contact() {
             className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.01] disabled:opacity-70 sm:w-auto"
           >
             {status === "loading" ? (
-              <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</>
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" /> Sending…
+              </>
             ) : status === "sent" ? (
-              <><CheckCircle2 className="h-4 w-4" /> Message sent</>
+              <>
+                <CheckCircle2 className="h-4 w-4" /> Message sent
+              </>
             ) : (
-              <><Send className="h-4 w-4" /> Send message</>
+              <>
+                <Send className="h-4 w-4" /> Send message
+              </>
             )}
           </button>
         </motion.form>
