@@ -5,7 +5,6 @@ import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Resume } from "@/components/sections/Resume";
 import { Timeline } from "@/components/sections/Timeline";
 import { Certifications } from "@/components/sections/Certifications";
@@ -23,7 +22,6 @@ export default function App() {
         <Services />
         <TechStack />
         <Projects />
-        <Testimonials />
         <Resume />
         <Timeline />
         <Certifications />
