@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, FolderGit2, Cpu, Clock, CheckCircle2 } from "lucide-react";
-import heroPhoto from "@/assets/head.png";
+import heroPhoto from "@/assets/hero-visual.jpg";
 import { personalInfo, stats } from "@/data/portfolio";
 import { useTypewriter } from "@/hooks/use-typewriter";
 

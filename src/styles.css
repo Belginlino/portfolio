@@ -2,9 +2,6 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
 /* Vivid Orange & Near-Black Sleek Theme — Belgin Lino SP */
 
 @theme inline {
@@ -125,64 +122,63 @@
   }
 }
 
-@layer utilities {
-  .font-hero {
-    font-family: var(--font-hero);
-  }
+@utility font-hero {
+  font-family: var(--font-hero);
+}
 
-  .text-orange-accent {
-    color: #ff6a1a;
-  }
+@utility text-orange-accent {
+  color: #ff6a1a;
+}
 
-  .bg-orange-accent {
-    background-color: #ff6a1a;
-  }
+@utility bg-orange-accent {
+  background-color: #ff6a1a;
+}
 
-  .border-orange-accent {
-    border-color: #ff6a1a;
-  }
+@utility border-orange-accent {
+  border-color: #ff6a1a;
+}
 
-  .shadow-orange-glow {
-    box-shadow: 0 0 25px rgba(255, 106, 26, 0.3);
-  }
+@utility shadow-orange-glow {
+  box-shadow: 0 0 25px rgba(255, 106, 26, 0.3);
+}
 
-  /* Faint dot-grid pattern */
-  .bg-dot-grid {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
+/* Faint dot-grid pattern */
+@utility bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
 
-  /* Line grid pattern */
-  .bg-line-grid {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
+/* Line grid pattern */
+@utility bg-line-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
 
-  /* Pulse glow keyframe */
-  .animate-pulse-glow {
-    animation: pulseGlow 4s ease-in-out infinite;
-  }
-  @keyframes pulseGlow {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 0.35;
-      filter: blur(40px);
-    }
-    50% {
-      transform: scale(1.1);
-      opacity: 0.55;
-      filter: blur(50px);
-    }
-  }
+/* Pulse glow keyframe */
+@utility animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
 
-  .animate-blink {
-    animation: blink 1s step-end infinite;
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.35;
+    filter: blur(40px);
   }
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.55;
+    filter: blur(50px);
   }
 }
 
+@utility animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
