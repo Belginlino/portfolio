@@ -130,14 +130,14 @@ export function Hero() {
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#FF6A1A]/15 opacity-40" />
 
             {/* Photo Container */}
-            <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-[#141414] shadow-2xl backdrop-blur">
+            <div className="group relative z-10 cursor-default overflow-hidden rounded-2xl border border-white/10 bg-[#141414] shadow-2xl backdrop-blur transition-all duration-500 hover:border-[#FF6A1A]/60 hover:shadow-[0_0_35px_rgba(255,106,26,0.35)]">
               <img
                 src={heroPhoto}
                 alt="Belgin Lino SP"
-                className="h-80 w-72 object-cover object-top filter grayscale contrast-125 transition-all duration-500 hover:grayscale-0 sm:h-96 sm:w-80"
+                className="h-80 w-72 object-cover object-top filter grayscale contrast-125 transition-all duration-500 group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105 sm:h-96 sm:w-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-3 left-4 right-4 rounded-xl border border-white/10 bg-[#141414]/90 p-2.5 backdrop-blur-md">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-30" />
+              <div className="absolute bottom-3 left-4 right-4 rounded-xl border border-white/10 bg-[#141414]/90 p-2.5 backdrop-blur-md transition-all duration-300 group-hover:border-[#FF6A1A]/40">
                 <p className="font-mono text-xs font-semibold text-white">Belgin Lino SP</p>
                 <p className="font-mono text-[10px] text-[#9A9A9A]">AI &amp; Fullstack Developer</p>
               </div>
