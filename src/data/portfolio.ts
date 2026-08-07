@@ -89,18 +89,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "ai-news-bot",
-    title: "AI Tech News WhatsApp Bot",
-    short: "Auto-summarized tech news delivered to WhatsApp every morning.",
+    id: "Lino_Menswear",
+    title: "Lino Menswear",
+    short: "POS and Billing System for Menswear Store.",
     description:
-      "A Python bot that scrapes the latest tech news, summarizes it using AI, and sends a clean digest directly to WhatsApp on a schedule.",
-    tech: ["Python", "OpenAI", "WhatsApp API", "n8n"],
-    categories: ["Python", "Automation", "AI"],
-    github: "https://github.com/belginlino",
+      "A professional billing and inventory management system for Lino Menswear, designed to streamline sales, track inventory, and manage customer data efficiently.",
+    tech: ["React", "Firebase"],
+    categories: ["Web", "Automation"],
+    github: "https://github.com/Belginlino/billing-software",
+    demo: "https://billing-software.pages.dev/login",
     highlights: [
-      "Daily automated delivery via cron",
-      "AI-powered summarization",
-      "WhatsApp Cloud API integration",
+      "Real-time billing & invoice generation",
+      "Inventory & stock management",
+      "Customer data & sales analytics",
     ],
   },
   {

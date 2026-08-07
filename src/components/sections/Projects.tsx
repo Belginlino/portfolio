@@ -133,13 +133,13 @@ export function Projects() {
                           <Github className="h-4 w-4" />
                         </a>
                       )}
-                      {project.demo && (
+                      {(project.demo || project.github) && (
                         <a
-                          href={project.demo}
+                          href={project.demo || project.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-[#1e1e1e] text-[#9A9A9A] transition-colors hover:border-[#FF6A1A]/40 hover:text-white"
-                          aria-label="Live Demo"
+                          aria-label="Open Project"
                         >
                           <ExternalLink className="h-4 w-4" />
                         </a>
@@ -226,25 +226,25 @@ export function Projects() {
                 ))}
               </div>
 
-              <div className="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
+              <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
                 {active.github && (
                   <a
                     href={active.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#1e1e1e] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-[#FF6A1A]/50"
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#1e1e1e] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-[#FF6A1A]/50 hover:bg-[#252525]"
                   >
                     <Github className="h-4 w-4" /> View Code
                   </a>
                 )}
-                {active.demo && (
+                {(active.demo || active.github) && (
                   <a
-                    href={active.demo}
+                    href={active.demo || active.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-all hover:bg-[#FF7B2E] hover:scale-[1.02]"
                   >
-                    <ExternalLink className="h-4 w-4" /> Live Demo
+                    <ExternalLink className="h-4 w-4" /> Open Project
                   </a>
                 )}
               </div>
