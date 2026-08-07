@@ -1,71 +1,103 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
-import heroVisual from "@/assets/hero-visual.jpg";
-import { personalInfo } from "@/data/portfolio";
+import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, FolderGit2, Cpu, Clock, CheckCircle2 } from "lucide-react";
+import heroPhoto from "@/assets/head.png";
+import { personalInfo, stats } from "@/data/portfolio";
 import { useTypewriter } from "@/hooks/use-typewriter";
+
+const statIcons = [FolderGit2, Cpu, Clock, CheckCircle2];
+
 export function Hero() {
-  const text = useTypewriter(personalInfo.roles, 80, 1400);
+  const roleText = useTypewriter(personalInfo.roles, 70, 1600);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44"
+      className="relative isolate min-h-screen overflow-hidden bg-[#0A0A0A] pt-32 pb-20 lg:pt-36 lg:pb-28"
     >
-      {/* Aurora background */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-aurora" />
+      {/* Faint Dot Grid Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-dot-grid opacity-30" />
+
+      {/* Subtle cursor-following ambient orange glow */}
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 grid-pattern opacity-40"
+        className="pointer-events-none absolute -z-10 h-[500px] w-[500px] rounded-full bg-[#FF6A1A]/10 blur-[120px] transition-transform duration-300 ease-out"
+        style={{
+          left: `${mousePos.x - 250}px`,
+          top: `${mousePos.y - 250}px`,
+        }}
       />
 
+      {/* Static soft ambient orange top light */}
+      <div className="pointer-events-none absolute top-10 left-1/3 -z-10 h-72 w-96 rounded-full bg-[#FF6A1A]/10 blur-[130px]" />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr_auto] lg:gap-10 xl:gap-14">
+          
+          {/* LEFT: Text Content & CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Hi, I'm <span className="text-gradient">Belgin Lino</span>.
-              <br />
-              <span className="text-foreground/90">AI Student & Developer</span>
-              <br />
-              <span className="text-foreground/90"> building real-world projects.</span>
+            {/* Monospace accent tagline */}
+            <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-[#FF6A1A]">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>&lt; hello, I'm /&gt;</span>
+            </div>
+
+            {/* Oversized hero heading */}
+            <h1 className="mt-3 font-hero text-6xl font-extrabold uppercase leading-[0.92] tracking-tight text-white sm:text-7xl lg:text-8xl">
+              BELGIN <br />
+              <span className="text-white/90">LINO</span>
+              <span className="text-[#FF6A1A]">.</span>
             </h1>
 
-            <p className="mt-6 flex items-center gap-2 font-mono text-base text-muted-foreground sm:text-lg">
-              <span className="text-accent">{">"}</span>
-              <span className="text-foreground">{text}</span>
-              <span className="inline-block h-5 w-[2px] animate-blink bg-primary" />
-            </p>
+            {/* Role text with typing effect */}
+            <div className="mt-5 flex items-center gap-2 font-mono text-sm font-medium text-[#F5F5F5] sm:text-base">
+              <span className="text-[#FF6A1A]">&gt;</span>
+              <span>{roleText}</span>
+              <span className="inline-block h-4 w-[2px] animate-blink bg-[#FF6A1A]" />
+            </div>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            {/* Bio text */}
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-[#9A9A9A] sm:text-base">
               {personalInfo.bio}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              {/* Primary CTA: Solid Orange */}
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
+                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-xl bg-[#FF6A1A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[#FF7B2E] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] active:scale-[0.98]"
               >
-                View Projects <ArrowDown className="h-4 w-4" />
+                <span>View Projects</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
+
+              {/* Secondary CTA: Dark with Orange Border */}
               <a
                 href={personalInfo.resumeUrl}
                 download
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 px-5 py-3 text-sm font-medium text-foreground backdrop-blur transition-all hover:border-primary/50 hover:bg-card"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#FF6A1A]/40 bg-[#141414] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:border-[#FF6A1A] hover:bg-[#FF6A1A]/10 hover:scale-[1.03] active:scale-[0.98]"
               >
-                <Download className="h-4 w-4" /> Download Resume
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium text-foreground/80 underline-offset-4 hover:text-foreground hover:underline"
-              >
-                Contact Me →
+                <Download className="h-4 w-4 text-[#FF6A1A]" />
+                <span>Resume</span>
               </a>
             </div>
 
-            <div className="mt-10 flex items-center gap-4">
+            {/* Social Icons */}
+            <div className="mt-10 flex items-center gap-3">
+              <span className="font-mono text-xs uppercase tracking-wider text-[#9A9A9A]">Follow:</span>
               {[
                 { Icon: Github, href: personalInfo.github, label: "GitHub" },
                 { Icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
@@ -77,65 +109,89 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="group flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card/40 text-muted-foreground backdrop-blur transition-all hover:scale-110 hover:border-primary/60 hover:text-foreground"
+                  className="group flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#141414] text-[#9A9A9A] transition-all duration-200 hover:border-[#FF6A1A]/50 hover:bg-[#1e1e1e] hover:text-[#FF6A1A] hover:scale-110"
                 >
-                  <Icon className="h-5 w-5 transition-transform group-hover:rotate-6" />
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </motion.div>
 
+          {/* CENTER/RIGHT: Portrait Photo + Glowing Ring + Code Snippet Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-            className="relative"
+            className="relative flex justify-center py-6"
           >
-            <div className="absolute -inset-6 -z-10 bg-gradient-primary opacity-20 blur-3xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-elegant">
+            {/* Glowing Orange Ring / Pulsing Circle behind photo */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF6A1A] animate-pulse-glow" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#FF6A1A]/30 opacity-70" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#FF6A1A]/15 opacity-40" />
+
+            {/* Photo Container */}
+            <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-[#141414] shadow-2xl backdrop-blur">
               <img
-                src={heroVisual}
-                alt="Belgin's developer workspace illustration"
-                width={1280}
-                height={1280}
-                className="h-full w-full object-cover"
+                src={heroPhoto}
+                alt="Belgin Lino SP"
+                className="h-80 w-72 object-cover object-top filter grayscale contrast-125 transition-all duration-500 hover:grayscale-0 sm:h-96 sm:w-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-3 left-4 right-4 rounded-xl border border-white/10 bg-[#141414]/90 p-2.5 backdrop-blur-md">
+                <p className="font-mono text-xs font-semibold text-white">Belgin Lino SP</p>
+                <p className="font-mono text-[10px] text-[#9A9A9A]">AI &amp; Fullstack Developer</p>
+              </div>
             </div>
 
-            {/* floating cards */}
+            {/* Floating Decorative Code Snippet Card */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-4 top-10 hidden rounded-2xl border border-border bg-card/80 p-3 shadow-elegant backdrop-blur sm:block"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground">
-                  🐍
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Loving</p>
-                  <p className="text-sm font-semibold">Python &amp; React</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-4 bottom-10 hidden rounded-2xl border border-border bg-card/80 p-3 shadow-elegant backdrop-blur sm:block"
+              className="absolute -bottom-6 -left-2 z-20 max-w-[210px] rounded-xl border border-white/10 bg-[#141414]/95 p-3.5 shadow-2xl backdrop-blur-xl sm:-left-8"
             >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/20 text-accent">
-                  ⚡
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Building</p>
-                  <p className="text-sm font-semibold">Automations</p>
-                </div>
+              <div className="mb-2 flex items-center gap-1.5 border-b border-white/10 pb-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+                <span className="ml-auto font-mono text-[10px] text-[#9A9A9A]">dev.config.ts</span>
               </div>
+              <pre className="font-mono text-[11px] leading-relaxed text-[#9A9A9A]">
+                <span className="text-[#FF6A1A]">const</span> developer = &#123;{"\n"}
+                {"  "}status: <span className="text-emerald-400">"Available"</span>,{"\n"}
+                {"  "}focus: <span className="text-[#FF6A1A]">"AI &amp; Web"</span>{"\n"}
+                &#125;;
+              </pre>
             </motion.div>
           </motion.div>
+
+          {/* FAR RIGHT: Vertical Stats List with Icons */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex flex-row justify-around gap-4 rounded-2xl border border-white/10 bg-[#141414] p-5 lg:flex-col lg:justify-center lg:gap-6 lg:p-6"
+          >
+            {stats.map((item, idx) => {
+              const Icon = statIcons[idx % statIcons.length];
+              return (
+                <div key={item.label} className="flex items-center gap-3.5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#FF6A1A]/30 bg-[#FF6A1A]/10 text-[#FF6A1A]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="font-hero text-2xl font-extrabold tracking-tight text-white lg:text-3xl">
+                      {item.value}
+                      <span className="text-[#FF6A1A]">{item.suffix}</span>
+                    </p>
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-[#9A9A9A]">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </motion.div>
+
         </div>
       </div>
     </section>

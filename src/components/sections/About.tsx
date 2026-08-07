@@ -1,95 +1,88 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
-import { personalInfo, stats } from "@/data/portfolio";
-import { useCountUp } from "@/hooks/use-count-up";
-import { Briefcase, GraduationCap, MapPin, Plane } from "lucide-react";
+import { personalInfo, strengths } from "@/data/portfolio";
+import { Zap, Code, Bot, CheckCircle, GraduationCap, Briefcase, MapPin, Globe } from "lucide-react";
 
-function StatCard({
-  value,
-  suffix,
-  label,
-  delay,
-  inView,
-}: {
-  value: number;
-  suffix: string;
-  label: string;
-  delay: number;
-  inView: boolean;
-}) {
-  const count = useCountUp(value, 1500, inView);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all hover:border-primary/40 hover:shadow-glow"
-    >
-      <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-primary opacity-10 blur-2xl transition-opacity group-hover:opacity-30" />
-      <p className="font-display text-4xl font-semibold tracking-tight">
-        <span className="text-gradient">{count}</span>
-        <span className="text-foreground/70">{suffix}</span>
-      </p>
-      <p className="mt-1 text-sm text-muted-foreground">{label}</p>
-    </motion.div>
-  );
-}
+const featureIcons = [Zap, Code, Bot, CheckCircle];
 
 export function About() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <Section
       id="about"
-      eyebrow="About"
+      eyebrow="ABOUT ME"
       title={
         <>
-          A bit about <span className="text-gradient">me</span>
+          BUILDING IDEAS INTO <span className="text-[#FF6A1A]">REALITY</span>
         </>
       }
-      description="Driven by curiosity, focused on building things that work."
+      description="Passionate AI student and developer dedicated to clean code, practical applications, and continuous growth."
     >
-      <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        {/* Left Column: Personal Story */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg"
+          className="space-y-6"
         >
-          <p>{personalInfo.longBio}</p>
-          <p>
-            I love exploring <span className="text-foreground font-medium">new technologies</span>,{" "}
-            <span className="text-foreground font-medium">building impactful projects</span> and{" "}
-            <span className="text-foreground font-medium"></span>turning ideas into real
-            applications.
-          </p>
+          <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 sm:p-8">
+            <h3 className="font-hero text-2xl font-bold uppercase tracking-tight text-white mb-4">
+              My Journey &amp; Focus
+            </h3>
+            <p className="text-sm leading-relaxed text-[#9A9A9A] sm:text-base">
+              {personalInfo.longBio}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[#9A9A9A] sm:text-base">
+              I specialize in combining <span className="text-white font-medium">Python automation</span>,{" "}
+              <span className="text-[#FF6A1A] font-medium">modern web frontends</span>, and{" "}
+              <span className="text-white font-medium">AI tools</span> to solve real-world problems.
+            </p>
 
-          <ul className="grid gap-3 pt-4 sm:grid-cols-2">
-            {[
-              { Icon: GraduationCap, text: "Aspiring AI student" },
-              { Icon: Briefcase, text: "Open to internships & roles" },
-              { Icon: MapPin, text: "India" },
-              { Icon: Plane, text: "Germany" },
-            ].map(({ Icon, text }) => (
-              <li
-                key={text}
-                className="flex items-center gap-3 rounded-xl border border-border bg-card/40 px-4 py-3 text-sm text-foreground"
-              >
-                <Icon className="h-4 w-4 text-accent" />
-                {text}
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {[
+                { Icon: GraduationCap, text: "AI Engineering Student" },
+                { Icon: Briefcase, text: "Open to Internships" },
+                { Icon: MapPin, text: "Based in India" },
+                { Icon: Globe, text: "Learning German (Global roles)" },
+              ].map(({ Icon, text }) => (
+                <li
+                  key={text}
+                  className="flex items-center gap-3 rounded-xl border border-white/5 bg-[#1a1a1a] px-4 py-3 text-xs font-medium text-white"
+                >
+                  <Icon className="h-4 w-4 text-[#FF6A1A]" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
-        <div ref={ref} className="grid grid-cols-2 gap-4 sm:gap-5">
-          {stats.map((s, i) => (
-            <StatCard key={s.label} {...s} delay={i * 0.08} inView={inView} />
-          ))}
+        {/* Right Column: 2x2 Feature Grid */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {strengths.slice(0, 4).map((item, idx) => {
+            const Icon = featureIcons[idx % featureIcons.length];
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:border-[#FF6A1A]/40 hover:bg-[#1a1a1a] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,106,26,0.15)]"
+              >
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FF6A1A]/10 text-[#FF6A1A] transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#FF6A1A] group-hover:text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h4 className="font-display text-base font-bold text-white mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-xs leading-relaxed text-[#9A9A9A]">
+                  {item.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </Section>

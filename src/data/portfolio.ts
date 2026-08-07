@@ -238,3 +238,68 @@ export const strengths = [
     description: "Actively improving skills and preparing for global tech opportunities.",
   },
 ];
+
+export const services = [
+  {
+    id: "ai-automation",
+    title: "AI Integration & Automation",
+    description:
+      "Building intelligent WhatsApp & Telegram bots, OpenAI API integrations, and automated daily workflow scripts.",
+    iconName: "Bot",
+  },
+  {
+    id: "web-dev",
+    title: "Fullstack Web Development",
+    description:
+      "Crafting high-performance, responsive web applications using React, TypeScript, Tailwind CSS, Flask, and Django.",
+    iconName: "Globe",
+  },
+  {
+    id: "python-scripting",
+    title: "Python Tools & Scraping",
+    description:
+      "Developing custom CLI scripts, web scrapers, data processing tools, and media generation automation.",
+    iconName: "Code2",
+  },
+  {
+    id: "ui-ux",
+    title: "UI/UX & Interactive Design",
+    description:
+      "Designing ultra-sleek dark-mode web interfaces with responsive layouts, micro-interactions, and custom typography.",
+    iconName: "Sparkles",
+  },
+];
+
+export const testimonials = [
+  {
+    id: "t1",
+    name: "Dr. A. Rajesh",
+    role: "Department Mentor",
+    company: "St. Xavier's Catholic College",
+    quote:
+      "Belgin demonstrates exceptional initiative in applying Python and AI to build practical software solutions. His drive for building working applications sets him apart.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: "t2",
+    name: "K. Vignesh",
+    role: "Hackathon Lead",
+    company: "AI & Tech Club",
+    quote:
+      "Working with Belgin during hackathons was a game changer. He rapidly turns raw concepts into working React and Python prototypes with crisp designs.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: "t3",
+    name: "S. Priya",
+    role: "Peer Developer",
+    company: "Open Source Collaborator",
+    quote:
+      "Belgin's automated WhatsApp news bot and classroom automation scripts saved our team endless hours. He is reliable, fast, and project-focused!",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+  },
+];
+

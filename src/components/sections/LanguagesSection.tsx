@@ -7,13 +7,13 @@ export function LanguagesSection() {
   return (
     <Section
       id="languages"
-      eyebrow="Languages"
+      eyebrow="LANGUAGES"
       title={
         <>
-          I speak <span className="text-gradient">multiple languages</span>
+          SPOKEN <span className="text-[#FF6A1A]">LANGUAGES</span>
         </>
       }
-      description="Bridging cultures across India and Germany."
+      description="Communicating across global teams and multicultural environments."
     >
       <div className="grid gap-5 sm:grid-cols-3">
         {languages.map((l, i) => (
@@ -23,25 +23,26 @@ export function LanguagesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.07 }}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/40 hover:bg-[#1a1a1a]"
           >
-            <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-accent opacity-10 blur-2xl transition-opacity group-hover:opacity-30" />
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
+            <div className="flex items-center gap-3.5">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FF6A1A]/10 text-[#FF6A1A] transition-colors duration-300 group-hover:bg-[#FF6A1A] group-hover:text-white">
                 <LangIcon className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="font-display text-lg font-semibold">{l.name}</h3>
-                <p className="text-xs text-muted-foreground">{l.level}</p>
+                <h3 className="font-display text-base font-bold text-white group-hover:text-[#FF6A1A] transition-colors">
+                  {l.name}
+                </h3>
+                <p className="text-xs text-[#9A9A9A]">{l.level}</p>
               </div>
             </div>
-            <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-muted">
+            <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-[#1e1e1e]">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${l.percent}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.2 + i * 0.1, ease: "easeOut" }}
-                className="h-full rounded-full bg-gradient-primary"
+                className="h-full rounded-full bg-[#FF6A1A]"
               />
             </div>
           </motion.div>

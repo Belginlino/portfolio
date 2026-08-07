@@ -3,48 +3,46 @@ import { Download, Eye, FileText, CheckCircle2 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { personalInfo } from "@/data/portfolio";
 
-const highlights = ["Web Developer", "Project Experience", " Openness to Experience"];
+const highlights = ["Web Developer", "Project Experience", "Openness to Experience"];
 
 export function Resume() {
   return (
     <Section
       id="resume"
-      eyebrow="Resume"
+      eyebrow="RESUME"
       title={
         <>
-          Grab my <span className="text-gradient">resume</span>
+          GRAB MY <span className="text-[#FF6A1A]">RESUME</span>
         </>
       }
-      description="A concise overview of my skills, projects, and journey so far."
+      description="A concise overview of my technical skills, software projects, and experience."
     >
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur sm:p-12"
+        className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#141414] p-8 shadow-2xl sm:p-12"
       >
-        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-primary opacity-20 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-accent opacity-15 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#FF6A1A]/15 blur-3xl" />
 
         <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-medium text-accent backdrop-blur">
-              <FileText className="h-3.5 w-3.5" /> PDF · Updated 2026
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#FF6A1A]/30 bg-[#FF6A1A]/10 px-3.5 py-1 font-mono text-xs font-semibold text-[#FF6A1A]">
+              <FileText className="h-3.5 w-3.5" /> PDF Document
             </span>
-            <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h3 className="mt-4 font-hero text-2xl font-bold uppercase text-white sm:text-3xl">
               Aspiring developer ready to contribute.
             </h3>
-            <p className="mt-3 text-muted-foreground">
-              From Python automation to React frontends — explore my hands-on experience and the
-              technologies I love working with.
+            <p className="mt-3 text-xs leading-relaxed text-[#9A9A9A] sm:text-sm">
+              From Python automation tools to React frontends — explore my hands-on project experience and qualifications.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={personalInfo.resumeUrl}
                 download
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-all hover:bg-[#FF7B2E] hover:scale-[1.02]"
               >
                 <Download className="h-4 w-4" /> Download Resume
               </a>
@@ -52,9 +50,9 @@ export function Resume() {
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/80 px-5 py-3 text-sm font-medium hover:border-primary/40"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#1e1e1e] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all hover:border-[#FF6A1A]/40"
               >
-                <Eye className="h-4 w-4" /> View Resume
+                <Eye className="h-4 w-4 text-[#FF6A1A]" /> View PDF
               </a>
             </div>
           </div>
@@ -67,10 +65,10 @@ export function Resume() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-center gap-3 rounded-xl border border-border bg-card/80 px-4 py-3 backdrop-blur"
+                className="flex items-center gap-3 rounded-xl border border-white/5 bg-[#1a1a1a] px-4 py-3 text-xs font-semibold text-white"
               >
-                <CheckCircle2 className="h-5 w-5 text-accent" />
-                <span className="text-sm font-medium">{h}</span>
+                <CheckCircle2 className="h-4 w-4 text-[#FF6A1A]" />
+                <span>{h}</span>
               </motion.li>
             ))}
           </ul>

@@ -1,36 +1,36 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { BackToTop } from "@/components/BackToTop";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
-import { Skills } from "@/components/sections/Skills";
+import { Services } from "@/components/sections/Services";
+import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { Resume } from "@/components/sections/Resume";
 import { Timeline } from "@/components/sections/Timeline";
 import { Certifications } from "@/components/sections/Certifications";
 import { LanguagesSection } from "@/components/sections/LanguagesSection";
-import { WhyHire } from "@/components/sections/WhyHire";
 import { Contact } from "@/components/sections/Contact";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen bg-[#0A0A0A] text-[#F5F5F5] selection:bg-[#FF6A1A] selection:text-white">
       <Navbar />
       <main>
         <Hero />
         <About />
-        <Skills />
+        <Services />
+        <TechStack />
         <Projects />
+        <Testimonials />
         <Resume />
         <Timeline />
         <Certifications />
         <LanguagesSection />
-        <WhyHire />
         <Contact />
       </main>
       <Footer />
-      <BackToTop />
       <Toaster />
     </div>
   );

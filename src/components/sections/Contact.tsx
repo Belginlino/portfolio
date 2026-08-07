@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
-import { Github, Linkedin, Mail, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Send, Loader2, CheckCircle2, Sparkles, MessageSquare } from "lucide-react";
 import { Section } from "@/components/Section";
 import { personalInfo } from "@/data/portfolio";
 
@@ -43,7 +43,7 @@ export function Contact() {
           name: form.name,
           email: form.email,
           message: form.message,
-          _subject: `New message from ${form.name}`,
+          _subject: `New portfolio inquiry from ${form.name}`,
         }),
       });
 
@@ -53,10 +53,10 @@ export function Contact() {
 
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
+      setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
       console.error("Email send failed:", error);
-      setSendError("Unable to send message right now. Please try again later.");
+      setSendError("Unable to send message right now. Please email directly.");
       setStatus("idle");
     }
   };
@@ -64,97 +64,55 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="Contact"
+      eyebrow="CONTACT ME"
       title={
         <>
-          Let's <span className="text-gradient">build something</span>
+          LET'S WORK <span className="text-[#FF6A1A]">TOGETHER</span>
         </>
       }
-      description="Have a project, an opportunity, or just want to say hi? I'd love to hear from you."
+      description="Have a project in mind, an internship opportunity, or want to discuss AI & web development? Send a message below!"
     >
-      <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="space-y-4"
-        >
-          {[
-            {
-              Icon: Mail,
-              label: "Email",
-              value: personalInfo.email,
-              href: `mailto:${personalInfo.email}`,
-            },
-            { Icon: Github, label: "GitHub", value: "@belginlino", href: personalInfo.github },
-            {
-              Icon: Linkedin,
-              label: "LinkedIn",
-              value: "Belgin Lino SP",
-              href: personalInfo.linkedin,
-            },
-            { Icon: MapPin, label: "Location", value: personalInfo.location },
-          ].map(({ Icon, label, value, href }) => {
-            const inner = (
-              <div className="flex items-center gap-4 rounded-2xl border border-border bg-card/60 p-5 backdrop-blur transition-all hover:border-primary/40 hover:shadow-glow">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
-                  <p className="truncate text-sm font-medium">{value}</p>
-                </div>
-              </div>
-            );
-            return href ? (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                {inner}
-              </a>
-            ) : (
-              <div key={label}>{inner}</div>
-            );
-          })}
-        </motion.div>
-
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
+        
+        {/* LEFT COLUMN: Contact Form */}
         <motion.form
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           onSubmit={onSubmit}
-          className="rounded-3xl border border-border bg-card/60 p-6 backdrop-blur sm:p-8"
+          className="rounded-3xl border border-white/10 bg-[#141414] p-6 shadow-2xl sm:p-8"
         >
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
+            <MessageSquare className="h-5 w-5 text-[#FF6A1A]" />
+            <h3 className="font-hero text-xl font-bold uppercase text-white">Send a Message</h3>
+          </div>
+
+          <div className="space-y-5">
             <div>
               <label
                 htmlFor="name"
-                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A]"
               >
-                Name
+                Your Name
               </label>
               <input
                 id="name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 maxLength={100}
-                className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
-                placeholder="Your name"
+                className="w-full rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#555555] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-1 focus:ring-[#FF6A1A]"
+                placeholder="John Doe"
               />
-              {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+              {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
             </div>
+
             <div>
               <label
                 htmlFor="email"
-                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A]"
               >
-                Email
+                Email Address
               </label>
               <input
                 id="email"
@@ -162,52 +120,137 @@ export function Contact() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 maxLength={255}
-                className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
-                placeholder="you@example.com"
+                className="w-full rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#555555] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-1 focus:ring-[#FF6A1A]"
+                placeholder="john@example.com"
               />
-              {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+              {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
+            </div>
+
+            <div>
+              <label
+                htmlFor="message"
+                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A]"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                rows={5}
+                maxLength={1000}
+                className="w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#555555] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-1 focus:ring-[#FF6A1A]"
+                placeholder="Tell me about your project, idea, or role opportunity..."
+              />
+              {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
             </div>
           </div>
-          <div className="mt-5">
-            <label
-              htmlFor="message"
-              className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              rows={5}
-              maxLength={1000}
-              className="w-full resize-none rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
-              placeholder="Tell me about your project or opportunity..."
-            />
-            {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
-          </div>
 
-          {sendError && <p className="mb-4 text-sm text-destructive">{sendError}</p>}
+          {sendError && <p className="mt-4 text-xs text-red-400">{sendError}</p>}
+
           <button
             type="submit"
             disabled={status === "loading"}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-glow transition-transform hover:scale-[1.01] disabled:opacity-70 sm:w-auto"
+            className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#FF6A1A] px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:bg-[#FF7B2E] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] disabled:opacity-60"
           >
             {status === "loading" ? (
               <>
-                <Loader2 className="h-4 w-4 animate-spin" /> Sending…
+                <Loader2 className="h-4 w-4 animate-spin" /> Sending message…
               </>
             ) : status === "sent" ? (
               <>
-                <CheckCircle2 className="h-4 w-4" /> Message sent
+                <CheckCircle2 className="h-4 w-4" /> Message Sent Successfully!
               </>
             ) : (
               <>
-                <Send className="h-4 w-4" /> Send message
+                <Send className="h-4 w-4" /> Send Message
               </>
             )}
           </button>
         </motion.form>
+
+        {/* RIGHT COLUMN: Contact Info Card */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="space-y-6"
+        >
+          {/* Status Badge */}
+          <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
+            </span>
+            <div>
+              <p className="font-mono text-xs font-bold uppercase text-emerald-400">
+                Current Availability
+              </p>
+              <p className="text-xs text-[#9A9A9A]">
+                Open for internships, freelance projects, and full-time junior tech roles.
+              </p>
+            </div>
+          </div>
+
+          {/* Contact Details List */}
+          <div className="rounded-3xl border border-white/10 bg-[#141414] p-6 space-y-4 sm:p-8">
+            <h3 className="font-hero text-xl font-bold uppercase text-white mb-6 border-b border-white/10 pb-4">
+              Direct Channels
+            </h3>
+
+            {[
+              {
+                Icon: Mail,
+                label: "Email",
+                value: personalInfo.email,
+                href: `mailto:${personalInfo.email}`,
+              },
+              {
+                Icon: Github,
+                label: "GitHub",
+                value: "@belginlino",
+                href: personalInfo.github,
+              },
+              {
+                Icon: Linkedin,
+                label: "LinkedIn",
+                value: "Belgin Lino SP",
+                href: personalInfo.linkedin,
+              },
+              {
+                Icon: MapPin,
+                label: "Location",
+                value: "India (Open for relocation & remote)",
+              },
+            ].map(({ Icon, label, value, href }) => {
+              const content = (
+                <div className="group flex items-center gap-4 rounded-xl border border-white/5 bg-[#1a1a1a] p-4 transition-all duration-300 hover:border-[#FF6A1A]/40 hover:bg-[#1e1e1e]">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FF6A1A]/10 text-[#FF6A1A] transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#FF6A1A] group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-[#9A9A9A]">
+                      {label}
+                    </p>
+                    <p className="truncate font-sans text-sm font-semibold text-white group-hover:text-[#FF6A1A] transition-colors">
+                      {value}
+                    </p>
+                  </div>
+                </div>
+              );
+
+              return href ? (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="block">
+                  {content}
+                </a>
+              ) : (
+                <div key={label}>{content}</div>
+              );
+            })}
+          </div>
+        </motion.div>
+
       </div>
     </Section>
   );
