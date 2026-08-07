@@ -142,26 +142,6 @@ export function Hero() {
                 <p className="font-mono text-[10px] text-[#9A9A9A]">AI &amp; Fullstack Developer</p>
               </div>
             </div>
-
-            {/* Floating Decorative Code Snippet Card */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-2 z-20 max-w-[210px] rounded-xl border border-white/10 bg-[#141414]/95 p-3.5 shadow-2xl backdrop-blur-xl sm:-left-8"
-            >
-              <div className="mb-2 flex items-center gap-1.5 border-b border-white/10 pb-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                <span className="ml-auto font-mono text-[10px] text-[#9A9A9A]">dev.config.ts</span>
-              </div>
-              <pre className="font-mono text-[11px] leading-relaxed text-[#9A9A9A]">
-                <span className="text-[#FF6A1A]">const</span> developer = &#123;{"\n"}
-                {"  "}status: <span className="text-emerald-400">"Available"</span>,{"\n"}
-                {"  "}focus: <span className="text-[#FF6A1A]">"AI &amp; Web"</span>{"\n"}
-                &#125;;
-              </pre>
-            </motion.div>
           </motion.div>
 
           {/* FAR RIGHT: Vertical Stats List with Icons */}
