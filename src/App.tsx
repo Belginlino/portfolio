@@ -15,9 +15,9 @@ import { Toaster } from "@/components/ui/sonner";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-[#0A0A0A] text-[#F5F5F5] selection:bg-[#FF6A1A] selection:text-white">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#0A0A0A] text-[#F5F5F5] selection:bg-[#FF6A1A] selection:text-white">
       <Navbar />
-      <main>
+      <main className="w-full max-w-full min-w-0 overflow-x-hidden">
         <Hero />
         <About />
         <Services />

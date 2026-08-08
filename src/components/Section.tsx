@@ -19,11 +19,11 @@ export function Section({
   className = "",
 }: SectionProps) {
   return (
-    <section id={id} className={`relative py-24 sm:py-32 bg-[#0A0A0A] ${className}`}>
+    <section id={id} className={`relative w-full max-w-full overflow-x-hidden min-w-0 py-20 sm:py-32 bg-[#0A0A0A] ${className}`}>
       {/* Background dot grid pattern */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-dot-grid opacity-20" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-3 sm:px-6 lg:px-8 min-w-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export function Section({
               // {eyebrow}
             </span>
           )}
-          <h2 className="mt-3 font-hero text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h2 className="mt-3 font-hero text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white break-words max-w-full">
             {title}
           </h2>
           {description && (

@@ -32,8 +32,8 @@ export function TechStack() {
       description="Technologies, frameworks, and tools I use daily to engineer applications."
     >
       {/* Single horizontal row of icons in bordered boxes */}
-      <div className="mb-14 overflow-x-auto pb-4 pt-2">
-        <div className="flex min-w-max items-center justify-center gap-4 px-2">
+      <div className="mb-14 overflow-x-auto pb-4 pt-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex w-max items-center gap-3.5 px-4 sm:mx-auto sm:justify-center">
           {techItems.map((item, idx) => {
             const Icon = item.icon;
             return (

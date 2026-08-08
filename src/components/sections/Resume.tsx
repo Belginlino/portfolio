@@ -24,7 +24,7 @@ export function Resume() {
         transition={{ duration: 0.6 }}
         className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#141414] p-8 shadow-2xl sm:p-12"
       >
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#FF6A1A]/15 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 -top-20 h-64 w-64 rounded-full bg-[#FF6A1A]/15 blur-3xl max-w-full" />
 
         <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
           <div>
@@ -61,8 +61,8 @@ export function Resume() {
             {highlights.map((h, i) => (
               <motion.li
                 key={h}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="flex items-center gap-3 rounded-xl border border-white/5 bg-[#1a1a1a] px-4 py-3 text-xs font-semibold text-white"

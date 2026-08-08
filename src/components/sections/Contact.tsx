@@ -72,23 +72,23 @@ export function Contact() {
       }
       description="Have a project in mind, an internship opportunity, or want to discuss AI & web development? Send a message below!"
     >
-      <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-14 items-start w-full max-w-full min-w-0">
         
         {/* LEFT COLUMN: Contact Form */}
         <motion.form
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           onSubmit={onSubmit}
-          className="rounded-3xl border border-white/10 bg-[#141414] p-6 shadow-2xl sm:p-8"
+          className="rounded-3xl border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p-8 shadow-2xl w-full max-w-full min-w-0 overflow-hidden"
         >
           <div className="mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
             <MessageSquare className="h-5 w-5 text-[#FF6A1A]" />
-            <h3 className="font-hero text-xl font-bold uppercase text-white">Send a Message</h3>
+            <h3 className="font-hero text-lg sm:text-xl font-bold uppercase text-white">Send a Message</h3>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-4 sm:space-y-5">
             <div>
               <label
                 htmlFor="name"
@@ -103,7 +103,7 @@ export function Contact() {
                 maxLength={100}
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? "name-error" : undefined}
-                className="w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
+                className="w-full max-w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="John Doe"
               />
               {errors.name && <p id="name-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.name}</p>}
@@ -124,7 +124,7 @@ export function Contact() {
                 maxLength={255}
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "email-error" : undefined}
-                className="w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
+                className="w-full max-w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="john@example.com"
               />
               {errors.email && <p id="email-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.email}</p>}
@@ -145,8 +145,8 @@ export function Contact() {
                 maxLength={1000}
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? "message-error" : undefined}
-                className="w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
-                placeholder="Tell me about your project, idea, or role opportunity..."
+                className="w-full max-w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0A] px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
+                placeholder="Tell me about your project or idea..."
               />
               {errors.message && <p id="message-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.message}</p>}
             </div>
@@ -157,7 +157,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl bg-[#FF6A1A] px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:bg-[#FF7B2E] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-60"
+            className="mt-6 inline-flex min-h-[48px] w-full max-w-full items-center justify-center gap-2 rounded-xl bg-[#FF6A1A] px-4 py-3.5 sm:px-6 sm:py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:bg-[#FF7B2E] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-60"
           >
             {status === "loading" ? (
               <>
@@ -177,19 +177,19 @@ export function Contact() {
 
         {/* RIGHT COLUMN: Contact Info Card */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="space-y-6"
+          className="space-y-6 max-w-full"
         >
           {/* Status Badge */}
           <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
-            <span className="relative flex h-3 w-3">
+            <span className="relative flex h-3 w-3 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
             </span>
-            <div>
+            <div className="min-w-0">
               <p className="font-mono text-xs font-bold uppercase text-emerald-400">
                 Current Availability
               </p>
@@ -200,7 +200,7 @@ export function Contact() {
           </div>
 
           {/* Contact Details List */}
-          <div className="rounded-3xl border border-white/10 bg-[#141414] p-6 space-y-4 sm:p-8">
+          <div className="rounded-3xl border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p-8 space-y-4">
             <h3 className="font-hero text-xl font-bold uppercase text-white mb-6 border-b border-white/10 pb-4">
               Direct Channels
             </h3>
@@ -239,7 +239,7 @@ export function Contact() {
                     <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-[#9A9A9A]">
                       {label}
                     </p>
-                    <p className="truncate font-sans text-sm font-semibold text-white group-hover:text-[#FF6A1A] transition-colors">
+                    <p className="font-sans text-xs sm:text-sm font-semibold text-white group-hover:text-[#FF6A1A] transition-colors break-words leading-snug">
                       {value}
                     </p>
                   </div>

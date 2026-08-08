@@ -20,8 +20,8 @@ export function About() {
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
         {/* Left Column: Personal Story */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="space-y-6"

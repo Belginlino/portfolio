@@ -61,10 +61,10 @@ export function Navbar() {
       />
 
       <header className="fixed inset-x-0 top-0 z-50 py-4 transition-all duration-300">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
           <nav
             aria-label="Main Navigation"
-            className={`flex items-center justify-between rounded-full px-5 py-3 transition-all duration-300 ${
+            className={`flex items-center justify-between rounded-full px-3.5 py-2 sm:px-5 sm:py-3 transition-all duration-300 ${
               scrolled
                 ? "border border-white/10 bg-[#141414]/90 shadow-2xl backdrop-blur-md"
                 : "border border-white/5 bg-[#141414]/60 backdrop-blur-sm"
@@ -73,12 +73,12 @@ export function Navbar() {
             {/* Logo Left */}
             <a
               href="#home"
-              className="group flex min-h-[44px] items-center gap-2.5 rounded-full px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
+              className="group flex min-h-[44px] items-center gap-2 sm:gap-2.5 rounded-full px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FF6A1A] text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-transform duration-300 group-hover:scale-105">
-                <Code2 className="h-5 w-5" />
+              <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-[#FF6A1A] text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-transform duration-300 group-hover:scale-105">
+                <Code2 className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
-              <span className="font-hero text-base font-extrabold tracking-wider uppercase text-white">
+              <span className="font-hero text-xs sm:text-base font-extrabold tracking-wider uppercase text-white">
                 BELGIN <span className="text-[#FF6A1A]">LINO</span>
               </span>
             </a>
