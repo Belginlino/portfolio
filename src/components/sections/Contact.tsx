@@ -92,7 +92,7 @@ export function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A]"
+                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#A3A3A3]"
               >
                 Your Name
               </label>
@@ -101,16 +101,18 @@ export function Contact() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 maxLength={100}
-                className="w-full rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#555555] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-1 focus:ring-[#FF6A1A]"
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? "name-error" : undefined}
+                className="w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="John Doe"
               />
-              {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
+              {errors.name && <p id="name-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.name}</p>}
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A]"
+                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#A3A3A3]"
               >
                 Email Address
               </label>
@@ -120,16 +122,18 @@ export function Contact() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 maxLength={255}
-                className="w-full rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#555555] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-1 focus:ring-[#FF6A1A]"
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "email-error" : undefined}
+                className="w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="john@example.com"
               />
-              {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
+              {errors.email && <p id="email-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.email}</p>}
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A]"
+                className="mb-2 block font-mono text-xs font-semibold uppercase tracking-wider text-[#A3A3A3]"
               >
                 Message
               </label>
@@ -139,19 +143,21 @@ export function Contact() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 rows={5}
                 maxLength={1000}
-                className="w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#555555] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-1 focus:ring-[#FF6A1A]"
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? "message-error" : undefined}
+                className="w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0A] px-4 py-3.5 text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="Tell me about your project, idea, or role opportunity..."
               />
-              {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
+              {errors.message && <p id="message-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.message}</p>}
             </div>
           </div>
 
-          {sendError && <p className="mt-4 text-xs text-red-400">{sendError}</p>}
+          {sendError && <p className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs text-red-400">{sendError}</p>}
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#FF6A1A] px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:bg-[#FF7B2E] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] disabled:opacity-60"
+            className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl bg-[#FF6A1A] px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:bg-[#FF7B2E] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-60"
           >
             {status === "loading" ? (
               <>

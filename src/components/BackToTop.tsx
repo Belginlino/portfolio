@@ -5,7 +5,7 @@ import { ArrowUp } from "lucide-react";
 export function BackToTop() {
   const [show, setShow] = useState(false);
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
+    const onScroll = () => setShow(window.scrollY > 500);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -19,7 +19,7 @@ export function BackToTop() {
           exit={{ opacity: 0, y: 20, scale: 0.8 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow transition-transform hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-[#FF6A1A] text-white shadow-[0_0_20px_rgba(255,106,26,0.5)] transition-all duration-300 hover:scale-110 hover:bg-[#FF7B2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A] active:scale-95"
         >
           <ArrowUp className="h-5 w-5" />
         </motion.button>

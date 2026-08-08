@@ -40,7 +40,7 @@ export function Hero() {
       <div className="pointer-events-none absolute top-10 left-1/3 -z-10 h-72 w-96 rounded-full bg-[#FF6A1A]/10 blur-[130px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr_auto] lg:gap-10 xl:gap-14">
+        <div className="grid items-center gap-10 md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_auto] lg:gap-10 xl:gap-14">
           
           {/* LEFT: Text Content & CTAs */}
           <motion.div
@@ -54,8 +54,8 @@ export function Hero() {
               <span>&lt; hello, I'm /&gt;</span>
             </div>
 
-            {/* Oversized hero heading */}
-            <h1 className="mt-3 font-hero text-6xl font-extrabold uppercase leading-[0.92] tracking-tight text-white sm:text-7xl lg:text-8xl">
+            {/* Oversized hero heading with responsive fluid scaling */}
+            <h1 className="mt-3 font-hero text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl break-words">
               BELGIN <br />
               <span className="text-white/90">LINO</span>
               <span className="text-[#FF6A1A]">.</span>
@@ -78,7 +78,7 @@ export function Hero() {
               {/* Primary CTA: Solid Orange */}
               <a
                 href="#projects"
-                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-xl bg-[#FF6A1A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[#FF7B2E] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] active:scale-[0.98]"
+                className="group relative inline-flex min-h-[44px] items-center gap-2.5 overflow-hidden rounded-xl bg-[#FF6A1A] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(255,106,26,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[#FF7B2E] hover:shadow-[0_0_30px_rgba(255,106,26,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white active:scale-[0.98]"
               >
                 <span>View Projects</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -88,7 +88,7 @@ export function Hero() {
               <a
                 href={personalInfo.resumeUrl}
                 download
-                className="inline-flex items-center gap-2 rounded-xl border border-[#FF6A1A]/40 bg-[#141414] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:border-[#FF6A1A] hover:bg-[#FF6A1A]/10 hover:scale-[1.03] active:scale-[0.98]"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-[#FF6A1A]/40 bg-[#141414] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:border-[#FF6A1A] hover:bg-[#FF6A1A]/10 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] active:scale-[0.98]"
               >
                 <Download className="h-4 w-4 text-[#FF6A1A]" />
                 <span>Resume</span>
@@ -109,7 +109,7 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="group flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#141414] text-[#9A9A9A] transition-all duration-200 hover:border-[#FF6A1A]/50 hover:bg-[#1e1e1e] hover:text-[#FF6A1A] hover:scale-110"
+                  className="group flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-[#141414] text-[#9A9A9A] transition-all duration-200 hover:border-[#FF6A1A]/50 hover:bg-[#1e1e1e] hover:text-[#FF6A1A] hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -117,7 +117,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* CENTER/RIGHT: Portrait Photo + Glowing Ring + Code Snippet Card */}
+          {/* CENTER/RIGHT: Portrait Photo + Glowing Ring */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -134,6 +134,7 @@ export function Hero() {
               <img
                 src={heroPhoto}
                 alt="Belgin Lino SP"
+                loading="eager"
                 className="h-80 w-72 object-cover object-top filter grayscale contrast-125 transition-all duration-500 group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105 sm:h-96 sm:w-80"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-30" />
@@ -149,7 +150,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-row justify-around gap-4 rounded-2xl border border-white/10 bg-[#141414] p-5 lg:flex-col lg:justify-center lg:gap-6 lg:p-6"
+            className="col-span-1 md:col-span-2 lg:col-span-1 flex flex-row flex-wrap justify-around gap-4 rounded-2xl border border-white/10 bg-[#141414] p-5 lg:flex-col lg:justify-center lg:gap-6 lg:p-6"
           >
             {stats.map((item, idx) => {
               const Icon = statIcons[idx % statIcons.length];

@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { BackToTop } from "@/components/BackToTop";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
@@ -29,6 +30,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
       <Toaster />
     </div>
   );

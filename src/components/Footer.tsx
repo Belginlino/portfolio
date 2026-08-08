@@ -36,12 +36,12 @@ export function Footer() {
           </div>
 
           {/* Quick Nav Links Center */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             {footerLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-mono text-xs font-semibold uppercase tracking-wider text-[#9A9A9A] transition-colors hover:text-[#FF6A1A]"
+                className="flex min-h-[44px] items-center px-2 font-mono text-xs font-semibold uppercase tracking-wider text-[#A3A3A3] transition-colors hover:text-[#FF6A1A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
               >
                 {link.label}
               </a>
@@ -61,7 +61,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#141414] text-[#9A9A9A] transition-all hover:border-[#FF6A1A]/50 hover:bg-[#FF6A1A] hover:text-white"
+                className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-[#141414] text-[#A3A3A3] transition-all hover:border-[#FF6A1A]/50 hover:bg-[#FF6A1A] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
               >
                 <Icon className="h-4 w-4" />
               </a>
@@ -70,7 +70,7 @@ export function Footer() {
             <button
               onClick={scrollToTop}
               aria-label="Scroll back to top"
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#FF6A1A]/40 bg-[#FF6A1A]/10 text-[#FF6A1A] transition-all hover:bg-[#FF6A1A] hover:text-white"
+              className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-[#FF6A1A]/40 bg-[#FF6A1A]/10 text-[#FF6A1A] transition-all hover:bg-[#FF6A1A] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
             >
               <ArrowUp className="h-4 w-4" />
             </button>
@@ -79,10 +79,10 @@ export function Footer() {
 
         {/* Copyright Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center sm:flex-row sm:text-left">
-          <p className="font-mono text-xs text-[#9A9A9A]">
+          <p className="font-mono text-xs text-[#A3A3A3]">
             © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
           </p>
-          <p className="font-mono text-xs text-[#9A9A9A]">
+          <p className="font-mono text-xs text-[#A3A3A3]">
             Designed with <span className="text-[#FF6A1A]">Orange &amp; Near-Black</span> aesthetic.
           </p>
         </div>

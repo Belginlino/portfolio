@@ -37,10 +37,20 @@ export function Navbar() {
       }
     };
 
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+      }
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   return (
     <>
@@ -53,6 +63,7 @@ export function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50 py-4 transition-all duration-300">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav
+            aria-label="Main Navigation"
             className={`flex items-center justify-between rounded-full px-5 py-3 transition-all duration-300 ${
               scrolled
                 ? "border border-white/10 bg-[#141414]/90 shadow-2xl backdrop-blur-md"
@@ -60,7 +71,10 @@ export function Navbar() {
             }`}
           >
             {/* Logo Left */}
-            <a href="#home" className="group flex items-center gap-2.5">
+            <a
+              href="#home"
+              className="group flex min-h-[44px] items-center gap-2.5 rounded-full px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
+            >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FF6A1A] text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-transform duration-300 group-hover:scale-105">
                 <Code2 className="h-5 w-5" />
               </span>
@@ -70,14 +84,14 @@ export function Navbar() {
             </a>
 
             {/* Nav Links Center */}
-            <ul className="hidden items-center gap-1 md:flex">
+            <ul className="hidden items-center gap-1 lg:flex">
               {navLinks.map((link) => {
                 const isActive = activeHash === link.href;
                 return (
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className={`relative rounded-full px-4 py-2 text-xs font-medium uppercase tracking-wider transition-colors duration-200 ${
+                      className={`relative flex min-h-[44px] items-center rounded-full px-4 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] ${
                         isActive
                           ? "text-white font-semibold"
                           : "text-[#9A9A9A] hover:text-white"
@@ -102,7 +116,7 @@ export function Navbar() {
             <div className="flex items-center gap-3">
               <a
                 href="#contact"
-                className="group relative hidden items-center gap-2 overflow-hidden rounded-full border border-[#FF6A1A] bg-[#FF6A1A]/10 px-5 py-2 text-xs font-semibold uppercase tracking-wider text-[#FF6A1A] transition-all duration-300 hover:bg-[#FF6A1A] hover:text-white hover:shadow-[0_0_20px_rgba(255,106,26,0.5)] hover:scale-[1.03] active:scale-[0.98] sm:inline-flex"
+                className="group relative hidden min-h-[44px] items-center gap-2 overflow-hidden rounded-full border border-[#FF6A1A] bg-[#FF6A1A]/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#FF6A1A] transition-all duration-300 hover:bg-[#FF6A1A] hover:text-white hover:shadow-[0_0_20px_rgba(255,106,26,0.5)] hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] active:scale-[0.98] sm:inline-flex"
               >
                 <span>Let's Talk</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -111,10 +125,12 @@ export function Navbar() {
               {/* Mobile menu trigger */}
               <button
                 onClick={() => setOpen((v) => !v)}
+                aria-expanded={open}
+                aria-controls="mobile-menu"
                 aria-label="Toggle navigation menu"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#1e1e1e] text-white transition-colors hover:border-[#FF6A1A]/50 md:hidden"
+                className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/10 bg-[#1e1e1e] text-white transition-colors hover:border-[#FF6A1A]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] lg:hidden"
               >
-                {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+                {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
           </nav>
@@ -122,10 +138,11 @@ export function Navbar() {
 
         {/* Mobile dropdown */}
         <motion.div
+          id="mobile-menu"
           initial={false}
           animate={open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="overflow-hidden md:hidden"
+          className="overflow-hidden lg:hidden"
         >
           <div className="mx-auto mt-2 max-w-7xl px-4">
             <ul className="flex flex-col gap-1 rounded-2xl border border-white/10 bg-[#141414] p-3 shadow-2xl backdrop-blur-xl">
@@ -134,7 +151,7 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-xs font-medium uppercase tracking-wider text-[#9A9A9A] transition-colors hover:bg-[#1e1e1e] hover:text-[#FF6A1A]"
+                    className="block min-h-[44px] rounded-xl px-4 py-3.5 text-xs font-medium uppercase tracking-wider text-[#9A9A9A] transition-colors hover:bg-[#1e1e1e] hover:text-[#FF6A1A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
                   >
                     {link.label}
                   </a>
@@ -144,7 +161,7 @@ export function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#FF6A1A] py-3 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)]"
+                  className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-[#FF6A1A] py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   Let's Talk <ArrowRight className="h-4 w-4" />
                 </a>
