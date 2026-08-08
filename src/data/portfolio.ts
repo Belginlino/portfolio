@@ -85,6 +85,7 @@ export interface Project {
   github?: string;
   demo?: string;
   highlights: string[];
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -98,6 +99,7 @@ export const projects: Project[] = [
     categories: ["Web", "Automation"],
     github: "https://github.com/Belginlino/billing-software",
     demo: "https://billing-software.pages.dev/login",
+    image: "/projects/lino-menswear.png",
     highlights: [
       "Real-time billing & invoice generation",
       "Inventory & stock management",
@@ -113,6 +115,7 @@ export const projects: Project[] = [
     tech: ["Python", "MoviePy", "Tkinter", "FFmpeg"],
     categories: ["Python", "Automation"],
     github: "https://github.com/belginlino",
+    image: "/projects/smart-video-editor.png",
     highlights: ["Template-based editing", "One-click export", "Music sync"],
   },
   {
@@ -124,6 +127,7 @@ export const projects: Project[] = [
     tech: ["Python", "Google API", "OAuth"],
     categories: ["Python", "Automation"],
     github: "https://github.com/belginlino",
+    image: "/projects/classroom-automation.png",
     highlights: ["OAuth secure auth", "Smart folder structure", "Scheduled sync"],
   },
   {
@@ -136,6 +140,7 @@ export const projects: Project[] = [
     categories: ["Web", "Python"],
     github: "https://github.com/belginlino",
     demo: "#",
+    image: "/projects/django-apps.png",
     highlights: ["Auth & permissions", "Admin dashboard", "REST endpoints"],
   },
   {
@@ -147,6 +152,7 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Tailwind", "Framer Motion"],
     categories: ["Web"],
     github: "https://github.com/belginlino",
+    image: "/projects/react-portfolio.png",
     highlights: ["Dark/Light theme", "Smooth animations", "Mobile-first"],
   },
   {
@@ -157,6 +163,7 @@ export const projects: Project[] = [
       "Reserved space for upcoming AI agent, LLM and ML side projects currently in research and prototyping.",
     tech: ["AI", "LLM", "Agents"],
     categories: ["AI"],
+    image: "/projects/future-ai.png",
     highlights: ["Coming soon", "Agent workflows", "RAG pipelines"],
   },
 ];

@@ -39,11 +39,10 @@ export function Projects() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`rounded-full px-5 py-2 text-xs font-mono font-semibold uppercase tracking-wider transition-all duration-300 ${
-                isActive
+              className={`rounded-full px-5 py-2 text-xs font-mono font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
                   ? "bg-[#FF6A1A] text-white shadow-[0_0_15px_rgba(255,106,26,0.4)]"
                   : "border border-white/10 bg-[#141414] text-[#9A9A9A] hover:border-[#FF6A1A]/40 hover:text-white"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -74,8 +73,16 @@ export function Projects() {
                   className="relative block aspect-[16/10] w-full overflow-hidden bg-[#1e1e1e] text-left"
                   aria-label={`View details for ${project.title}`}
                 >
-                  <div className="absolute inset-0 bg-dot-grid opacity-30" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/40 to-transparent" />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-dot-grid opacity-30" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/50 to-transparent" />
 
                   {/* Top category badge & icon */}
                   <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/10 bg-[#0A0A0A]/80 px-3 py-1 backdrop-blur-md">
@@ -182,11 +189,22 @@ export function Projects() {
             >
               <button
                 onClick={() => setActive(null)}
-                className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#1e1e1e] text-[#9A9A9A] transition-colors hover:text-white"
+                className="absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#1e1e1e] text-[#9A9A9A] transition-colors hover:text-white"
                 aria-label="Close modal"
               >
                 <X className="h-4 w-4" />
               </button>
+
+              {active.image && (
+                <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#1e1e1e]">
+                  <img
+                    src={active.image}
+                    alt={active.title}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent" />
+                </div>
+              )}
 
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#FF6A1A]">
                 // {active.categories.join(" · ")}
