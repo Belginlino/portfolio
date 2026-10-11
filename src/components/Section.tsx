@@ -29,14 +29,14 @@ export function Section({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-16 max-w-3xl text-center px-2"
         >
           {eyebrow && (
             <span className="inline-block font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#FF6A1A]">
               // {eyebrow}
             </span>
           )}
-          <h2 className="mt-3 font-hero text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white break-words max-w-full">
+          <h2 className="mt-3 font-hero text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white break-normal [word-break:keep-all] whitespace-normal max-w-full">
             {title}
           </h2>
           {description && (

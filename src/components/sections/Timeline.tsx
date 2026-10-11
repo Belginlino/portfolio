@@ -9,7 +9,8 @@ export function Timeline() {
       eyebrow="JOURNEY"
       title={
         <>
-          MY DEVELOPMENT <span className="text-[#FF6A1A]">PATH</span>
+          <span className="inline-block">MY DEVELOPMENT</span>{" "}
+          <span className="inline-block text-[#FF6A1A]">PATH</span>
         </>
       }
       description="Milestones and learning progression along my journey."

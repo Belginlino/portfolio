@@ -55,7 +55,8 @@ export function GithubActivity() {
       eyebrow="OPEN SOURCE & ACTIVITY"
       title={
         <>
-          GITHUB <span className="text-[#FF6A1A]">CONTRIBUTIONS & STATS</span>
+          <span className="inline-block">GITHUB</span>{" "}
+          <span className="inline-block text-[#FF6A1A]">CONTRIBUTIONS & STATS</span>
         </>
       }
       description="Live GitHub activity, commit heatmap calendar, and open-source metrics synced directly via the GitHub API."

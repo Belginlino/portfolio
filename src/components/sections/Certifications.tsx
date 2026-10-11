@@ -10,7 +10,8 @@ export function Certifications() {
       eyebrow="CERTIFICATIONS"
       title={
         <>
-          LEARNING <span className="text-[#FF6A1A]">CREDENTIALS</span>
+          <span className="inline-block">LEARNING</span>{" "}
+          <span className="inline-block text-[#FF6A1A]">CREDENTIALS</span>
         </>
       }
       description="Structured courses and training programs completed to sharpen technical capabilities."
