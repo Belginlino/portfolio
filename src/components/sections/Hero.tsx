@@ -87,7 +87,7 @@ export function Hero() {
               {/* Secondary CTA: Dark with Orange Border */}
               <a
                 href={personalInfo.resumeUrl}
-                download
+                download="Belgin_Lino_Resume.pdf"
                 className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-[#FF6A1A]/40 bg-[#141414] px-5 py-3 sm:px-6 sm:py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:border-[#FF6A1A] hover:bg-[#FF6A1A]/10 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] active:scale-[0.98]"
               >
                 <Download className="h-4 w-4 text-[#FF6A1A]" />

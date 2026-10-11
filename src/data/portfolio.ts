@@ -1,4 +1,4 @@
-import resumePdf from "@/assets/belgin resume.pdf";
+import resumePdf from "@/assets/Belgin_Lino_Resume.pdf";
 export const personalInfo = {
   name: "Belgin Lino SP",
   shortName: "Belgin",

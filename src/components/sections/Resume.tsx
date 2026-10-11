@@ -41,7 +41,7 @@ export function Resume() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={personalInfo.resumeUrl}
-                download
+                download="Belgin_Lino_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-all hover:bg-[#FF7B2E] hover:scale-[1.02]"
               >
                 <Download className="h-4 w-4" /> Download Resume
