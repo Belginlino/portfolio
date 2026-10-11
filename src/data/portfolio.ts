@@ -209,8 +209,9 @@ export const timeline = [
   },
   {
     year: "2026",
-    title: "Preparing for Global Tech Roles",
-    description: "Building my portfolio and learning German for international opportunities.",
+    title: "Software Developer at Nex X Spark",
+    description:
+      "Joined startup Nex X Spark as a Software Developer, engineering scalable solutions and working on real-world software projects.",
   },
 ];
 
