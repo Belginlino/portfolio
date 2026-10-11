@@ -21,6 +21,15 @@ export const stats = [
   { label: "Open to Internships", value: 100, suffix: "%" },
 ];
 
+export const featuredGithubRepos = [
+  "ProjectFlow",
+  "Satquery-AI",
+  "Fit-Tracker",
+  "BusTracker",
+  "Image-enhancer-and-BG-remover",
+  "myself_productivityapp",
+];
+
 export const skills = [
   {
     category: "Languages",
