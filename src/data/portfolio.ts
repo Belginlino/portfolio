@@ -220,8 +220,8 @@ export const certifications = [
   { title: "Fullstack Web Development", issuer: "Offline Course", year: "2024" },
   { title: "Machine Learning", issuer: "Offline Course", year: "2025" },
   { title: "React JS", issuer: "Intern Training", year: "2025" },
-  { title: "MERN Stack", issuer: "Online Course", year: "2026" },
-  { title: "Software Development", issuer: "Nex X Spark", year: "2026" },
+  { title: "MEARN Stack", issuer: "Online Course", year: "2026" },
+  { title: "Software Developer", issuer: "Nex X Spark", year: "2026" },
 ];
 
 export const languages = [
