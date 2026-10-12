@@ -15,16 +15,7 @@ interface ContributionsApiResponse {
 
 interface Props {
   username?: string;
-  theme?: "green" | "orange";
 }
-
-const GREEN_PALETTE = [
-  "#161B22", // Level 0: empty
-  "#0E4429", // Level 1
-  "#006D32", // Level 2
-  "#26A641", // Level 3
-  "#39D353", // Level 4: bright active green
-];
 
 const ORANGE_PALETTE = [
   "#161B22", // Level 0: empty
@@ -42,14 +33,13 @@ const MONTH_NAMES = [
 const CACHE_KEY_PREFIX = "gh_contribs_";
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
-export function GithubContributionGraph({ username = "belginlino", theme: initialTheme = "green" }: Props) {
+export function GithubContributionGraph({ username = "belginlino" }: Props) {
   const [data, setData] = useState<ContributionDay[]>([]);
   const [totalCount, setTotalCount] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [hoveredDay, setHoveredDay] = useState<ContributionDay | null>(null);
-  const [colorScheme, setColorScheme] = useState<"green" | "orange">(initialTheme);
 
-  const palette = colorScheme === "orange" ? ORANGE_PALETTE : GREEN_PALETTE;
+  const palette = ORANGE_PALETTE;
 
   const loadContributions = async (force = false) => {
     const cacheKey = `${CACHE_KEY_PREFIX}${username.toLowerCase()}`;
@@ -196,7 +186,7 @@ export function GithubContributionGraph({ username = "belginlino", theme: initia
       {/* Top Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FF6A1A]/10 text-[#FF6A1A] border border-[#FF6A1A]/20">
             <GitCommit className="h-4 w-4" />
           </div>
           <div>
@@ -209,35 +199,12 @@ export function GithubContributionGraph({ username = "belginlino", theme: initia
           </div>
         </div>
 
-        {/* Theme Pill Toggle & Sync */}
+        {/* Sync / Refresh Button */}
         <div className="flex items-center gap-2">
-          <div className="inline-flex rounded-lg border border-white/10 bg-[#181818] p-1 text-[11px] font-mono">
-            <button
-              onClick={() => setColorScheme("green")}
-              className={`rounded px-2.5 py-1 transition-all ${
-                colorScheme === "green"
-                  ? "bg-emerald-500/20 text-emerald-400 font-bold"
-                  : "text-[#8A8A8A] hover:text-white"
-              }`}
-            >
-              GitHub Green
-            </button>
-            <button
-              onClick={() => setColorScheme("orange")}
-              className={`rounded px-2.5 py-1 transition-all ${
-                colorScheme === "orange"
-                  ? "bg-[#FF6A1A]/20 text-[#FF6A1A] font-bold"
-                  : "text-[#8A8A8A] hover:text-white"
-              }`}
-            >
-              Orange Flame
-            </button>
-          </div>
-
           <button
             onClick={() => loadContributions(true)}
             disabled={loading}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-[#181818] text-[#8A8A8A] hover:border-white/20 hover:text-white disabled:opacity-50"
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-[#181818] text-[#8A8A8A] transition-all hover:border-[#FF6A1A]/40 hover:text-[#FF6A1A] disabled:opacity-50"
             title="Refresh contribution calendar"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin text-[#FF6A1A]" : ""}`} />

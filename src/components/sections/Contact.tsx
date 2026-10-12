@@ -38,17 +38,21 @@ export function Contact() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({
           name: form.name,
           email: form.email,
           message: form.message,
           _subject: `New portfolio inquiry from ${form.name}`,
+          _captcha: "false",
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Email service returned an error");
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || (data && (data.success === "false" || data.success === false))) {
+        throw new Error(data?.message || "Email service returned an error");
       }
 
       setStatus("sent");
@@ -56,7 +60,7 @@ export function Contact() {
       setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
       console.error("Email send failed:", error);
-      setSendError("Unable to send message right now. Please email directly.");
+      setSendError("Unable to send message right now. Please email directly or try again later.");
       setStatus("idle");
     }
   };

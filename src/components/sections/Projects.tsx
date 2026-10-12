@@ -151,17 +151,19 @@ export function Projects() {
                           rel="noopener noreferrer"
                           className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-white/10 bg-[#1e1e1e] text-[#9A9A9A] transition-colors hover:border-[#FF6A1A]/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
                           aria-label="GitHub Repository"
+                          title="View Source Code"
                         >
                           <Github className="h-4 w-4" />
                         </a>
                       )}
-                      {(project.demo || project.github) && (
+                      {project.demo && (
                         <a
-                          href={project.demo || project.github}
+                          href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-white/10 bg-[#1e1e1e] text-[#9A9A9A] transition-colors hover:border-[#FF6A1A]/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
-                          aria-label="Open Project"
+                          className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#FF6A1A]/30 bg-[#FF6A1A]/10 text-[#FF6A1A] transition-colors hover:bg-[#FF6A1A] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A]"
+                          aria-label="Live Demo"
+                          title="Live Demo"
                         >
                           <ExternalLink className="h-4 w-4" />
                         </a>
@@ -265,19 +267,19 @@ export function Projects() {
                     href={active.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#1e1e1e] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-[#FF6A1A]/50 hover:bg-[#252525]"
+                    className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-white/10 bg-[#1e1e1e] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-[#FF6A1A]/50 hover:bg-[#252525]"
                   >
-                    <Github className="h-4 w-4" /> View Code
+                    <Github className="h-4 w-4" /> View Source Code
                   </a>
                 )}
-                {(active.demo || active.github) && (
+                {active.demo && (
                   <a
-                    href={active.demo || active.github}
+                    href={active.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-all hover:bg-[#FF7B2E] hover:scale-[1.02]"
+                    className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-all hover:bg-[#FF7B2E] hover:scale-[1.02]"
                   >
-                    <ExternalLink className="h-4 w-4" /> Open Project
+                    <ExternalLink className="h-4 w-4" /> Live Demo
                   </a>
                 )}
               </div>

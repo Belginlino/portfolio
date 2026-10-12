@@ -4,6 +4,7 @@ import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, FolderGit2, Cpu
 import heroPhoto from "@/assets/hero-visual.jpg";
 import { personalInfo, stats } from "@/data/portfolio";
 import { useTypewriter } from "@/hooks/use-typewriter";
+import { downloadResume } from "@/utils/downloadResume";
 
 const statIcons = [FolderGit2, Cpu, Clock, CheckCircle2];
 
@@ -88,6 +89,7 @@ export function Hero() {
               <a
                 href={personalInfo.resumeUrl}
                 download="Belgin_Lino_Resume.pdf"
+                onClick={downloadResume}
                 className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-[#FF6A1A]/40 bg-[#141414] px-5 py-3 sm:px-6 sm:py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:border-[#FF6A1A] hover:bg-[#FF6A1A]/10 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] active:scale-[0.98]"
               >
                 <Download className="h-4 w-4 text-[#FF6A1A]" />

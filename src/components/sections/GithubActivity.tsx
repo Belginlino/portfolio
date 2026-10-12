@@ -188,9 +188,9 @@ export function GithubActivity() {
         </div>
       </div>
 
-      {/* GitHub Contribution Heatmap (Exact green tile activity calendar) */}
+      {/* GitHub Contribution Heatmap */}
       <div className="mb-10 transition-all">
-        <GithubContributionGraph username={USERNAME} theme="green" />
+        <GithubContributionGraph username={USERNAME} />
       </div>
 
       {/* Bottom CTA to explore all repos on GitHub */}

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Download, Eye, FileText, CheckCircle2 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { personalInfo } from "@/data/portfolio";
+import { downloadResume } from "@/utils/downloadResume";
 
 const highlights = ["Web Developer", "Project Experience", "Openness to Experience"];
 
@@ -42,6 +43,7 @@ export function Resume() {
               <a
                 href={personalInfo.resumeUrl}
                 download="Belgin_Lino_Resume.pdf"
+                onClick={downloadResume}
                 className="inline-flex items-center gap-2 rounded-xl bg-[#FF6A1A] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,106,26,0.4)] transition-all hover:bg-[#FF7B2E] hover:scale-[1.02]"
               >
                 <Download className="h-4 w-4" /> Download Resume
