@@ -83,9 +83,7 @@ export function Footer() {
           <p className="font-mono text-xs text-[#A3A3A3]">
             © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
           </p>
-          <p className="font-mono text-xs text-[#A3A3A3]">
-            Designed with <span className="text-[#FF6A1A]">Orange &amp; Near-Black</span> aesthetic.
-          </p>
+         
         </div>
       </div>
     </footer>
