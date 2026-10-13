@@ -14,13 +14,13 @@ export function Services() {
   return (
     <Section
       id="services"
-      eyebrow="SERVICES"
+      eyebrow="TECHNICAL OFFERINGS"
       title={
         <>
-          WHAT I <span className="text-[#FF6A1A]">BUILD &amp; OFFER</span>
+          WHAT I <span className="text-[#FF6A1A]">BUILD &amp; SOLVE</span>
         </>
       }
-      description="Specialized services bridging AI intelligence, fullstack web development, and process automation."
+      description="Practical software engineering capabilities grounded in actual project execution and coursework."
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service, idx) => {
@@ -33,7 +33,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/50 hover:bg-[#1a1a1a] hover:shadow-[0_0_25px_rgba(255,106,26,0.15)]"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/50 hover:bg-[#161616] hover:shadow-[0_0_25px_rgba(255,106,26,0.15)]"
             >
               {/* Card top accent line on hover */}
               <div className="absolute left-0 top-0 h-1 w-full bg-[#FF6A1A] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -45,7 +45,7 @@ export function Services() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display text-lg font-bold text-white mb-3 group-hover:text-[#FF6A1A] transition-colors duration-200">
+                <h3 className="font-display text-base sm:text-lg font-bold text-white mb-2.5 group-hover:text-[#FF6A1A] transition-colors duration-200">
                   {service.title}
                 </h3>
 
@@ -55,14 +55,21 @@ export function Services() {
                 </p>
               </div>
 
-              {/* Learn More link in Orange */}
-              <div className="mt-6 pt-4 border-t border-white/5">
+              {/* Functional Action Link */}
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
                 <a
-                  href="#contact"
+                  href="#projects"
                   className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#FF6A1A] hover:underline"
                 >
-                  <span>Learn more</span>
+                  <span>Explore Projects</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
+
+                <a
+                  href="#contact"
+                  className="font-mono text-[11px] text-[#737373] hover:text-white transition-colors"
+                >
+                  Discuss
                 </a>
               </div>
             </motion.div>

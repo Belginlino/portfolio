@@ -4,7 +4,13 @@ import { Section } from "@/components/Section";
 import { personalInfo } from "@/data/portfolio";
 import { downloadResume } from "@/utils/downloadResume";
 
-const highlights = ["Web Developer", "Project Experience", "Openness to Experience"];
+const highlights = [
+  "B.Tech AI & Data Science (St. Xavier's)",
+  "Full-Stack Web & Python Engineering",
+  "Verified Java Internship (White Aura X)",
+  "Production POS & Full-Stack Projects",
+  "Open to Technical Internships",
+];
 
 export function Resume() {
   return (

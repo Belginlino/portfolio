@@ -1,0 +1,5 @@
+# robots.txt for https://belginlino.in/
+User-agent: *
+Allow: /
+
+Sitemap: https://belginlino.in/sitemap.xml

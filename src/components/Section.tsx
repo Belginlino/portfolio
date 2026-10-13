@@ -19,7 +19,7 @@ export function Section({
   className = "",
 }: SectionProps) {
   return (
-    <section id={id} className={`relative w-full max-w-full overflow-x-hidden min-w-0 py-20 sm:py-32 bg-[#0A0A0A] ${className}`}>
+    <section id={id} className={`relative w-full max-w-full overflow-x-hidden min-w-0 py-20 sm:py-32 scroll-mt-20 lg:scroll-mt-24 bg-[#0A0A0A] ${className}`}>
       {/* Background dot grid pattern */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-dot-grid opacity-20" />
 

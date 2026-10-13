@@ -35,9 +35,16 @@ export function Certifications() {
                   {c.title}
                 </h3>
                 <p className="mt-1 text-xs text-[#9A9A9A]">{c.issuer}</p>
-                <span className="mt-2 inline-block rounded-md border border-white/10 bg-[#1e1e1e] px-2.5 py-0.5 font-mono text-[10px] text-[#FF6A1A]">
-                  {c.year}
-                </span>
+                <div className="mt-2.5 flex flex-wrap items-center gap-2">
+                  <span className="inline-block rounded-md border border-white/10 bg-[#1e1e1e] px-2.5 py-0.5 font-mono text-[10px] text-[#FF6A1A]">
+                    {c.year}
+                  </span>
+                  {c.type && (
+                    <span className="inline-block rounded-md border border-white/5 bg-[#181818] px-2 py-0.5 font-mono text-[10px] text-[#9A9A9A]">
+                      {c.type}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>

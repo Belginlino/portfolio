@@ -1,71 +1,164 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
+import { techStackCategories, type TechSkill, type SkillProficiency } from "@/data/portfolio";
 import {
+  Terminal,
   Code2,
   FileCode,
   Layers,
-  Server,
-  Database,
-  GitBranch,
-  Cpu,
-  Terminal,
-  Layout,
-  Wrench,
   Globe,
+  Layout,
+  Server,
+  Cpu,
+  Database,
+  Cloud,
+  HardDrive,
   Flame,
+  Binary,
+  Eye,
+  Bot,
+  GitBranch,
+  Github,
+  Code,
+  UploadCloud,
+  Network,
+  Zap,
+  Coffee,
+  Sparkles,
 } from "lucide-react";
 
-// Tech stack items
-const techItems = [
-  { name: "Python", icon: Terminal, color: "#FF6A1A" },
-  { name: "React", icon: Layers, color: "#61DAFB" },
-  { name: "TypeScript", icon: FileCode, color: "#3178C6" },
-  { name: "JavaScript", icon: Code2, color: "#F7DF1E" },
-  { name: "Django", icon: Server, color: "#092E20" },
-  { name: "Flask", icon: Cpu, color: "#FFFFFF" },
-  { name: "HTML5", icon: Globe, color: "#E34F26" },
-  { name: "CSS3", icon: Layout, color: "#1572B6" },
-  { name: "MySQL", icon: Database, color: "#4479A1" },
-  { name: "Git", icon: GitBranch, color: "#F05032" },
-  { name: "GitHub", icon: Wrench, color: "#FFFFFF" },
-  { name: "AI & ML", icon: Flame, color: "#FF6A1A" },
-];
+const iconLookup: Record<string, typeof Terminal> = {
+  Terminal,
+  Code2,
+  Coffee,
+  FileCode,
+  Cpu,
+  Layers,
+  Globe,
+  Layout,
+  Sparkles,
+  Zap,
+  Server,
+  Network,
+  Database,
+  HardDrive,
+  Cloud,
+  Flame,
+  Binary,
+  Eye,
+  Bot,
+  GitBranch,
+  Github,
+  Code,
+  UploadCloud,
+  TerminalSquare: Terminal,
+};
+
+function getBadgeStyle(level: SkillProficiency) {
+  switch (level) {
+    case "Project Experience":
+      return "border-[#FF6A1A]/40 bg-[#FF6A1A]/10 text-[#FF6A1A]";
+    case "Practicing":
+      return "border-sky-500/30 bg-sky-500/10 text-sky-400";
+    case "Familiar":
+      return "border-neutral-700 bg-neutral-800 text-neutral-300";
+    default:
+      return "border-neutral-700 bg-neutral-800 text-neutral-300";
+  }
+}
 
 export function TechStack() {
   return (
     <Section
       id="stack"
-      eyebrow="TECH STACK"
+      eyebrow="TECHNICAL CAPABILITIES"
       title={
         <>
-          POWERING MY <span className="text-[#FF6A1A]">SOLUTIONS</span>
+          CATEGORIZED <span className="text-[#FF6A1A]">TECH STACK</span>
         </>
       }
-      description="Technologies, frameworks, and tools I use daily to engineer applications."
+      description="Technologies, frameworks, and developer tools verified through actual projects and hands-on coursework."
     >
-      {/* Responsive Grid of Tech Stack Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {techItems.map((item, idx) => {
-          const Icon = item.icon;
-          return (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: idx * 0.03 }}
-              whileHover={{ y: -5, scale: 1.03 }}
-              className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-[#141414] p-5 transition-all duration-300 hover:border-[#FF6A1A]/50 hover:bg-[#1a1a1a] hover:shadow-[0_0_25px_rgba(255,106,26,0.2)]"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1e1e1e] text-[#FF6A1A] transition-all duration-300 group-hover:bg-[#FF6A1A] group-hover:text-white group-hover:shadow-[0_0_15px_rgba(255,106,26,0.4)]">
-                <Icon className="h-6 w-6" />
+      {/* Category Level Legend */}
+      <div className="mb-10 flex flex-wrap items-center justify-center gap-3 text-xs font-mono">
+        <span className="text-[#888888] font-semibold mr-1">Experience Levels:</span>
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#FF6A1A]/40 bg-[#FF6A1A]/10 px-3 py-1 font-semibold text-[#FF6A1A]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#FF6A1A]" />
+          Project Experience
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 font-semibold text-sky-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+          Practicing
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-700 bg-neutral-800 px-3 py-1 font-semibold text-neutral-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-neutral-400" />
+          Familiar
+        </span>
+      </div>
+
+      {/* Grid of Categories */}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {techStackCategories.map((group, groupIdx) => (
+          <motion.div
+            key={group.category}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: groupIdx * 0.06 }}
+            className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:border-[#FF6A1A]/40 hover:bg-[#161616] hover:shadow-[0_0_25px_rgba(255,106,26,0.15)]"
+          >
+            <div>
+              <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                <h3 className="font-hero text-base font-bold uppercase tracking-tight text-white group-hover:text-[#FF6A1A] transition-colors">
+                  {group.category}
+                </h3>
+                <span className="font-mono text-[11px] text-[#737373]">
+                  {group.items.length} skills
+                </span>
               </div>
-              <span className="font-mono text-xs font-semibold text-[#A3A3A3] transition-colors duration-200 group-hover:text-white text-center">
-                {item.name}
-              </span>
-            </motion.div>
-          );
-        })}
+              <p className="mt-2 text-xs text-[#8A8A8A] leading-relaxed">
+                {group.description}
+              </p>
+
+              {/* Items in this category */}
+              <div className="mt-5 space-y-3">
+                {group.items.map((skill: TechSkill) => {
+                  const Icon = iconLookup[skill.iconName] || Terminal;
+                  const badgeClass = getBadgeStyle(skill.level);
+
+                  return (
+                    <div
+                      key={skill.name}
+                      className="flex items-center justify-between rounded-xl border border-white/5 bg-[#1A1A1A] p-3 transition-colors hover:border-white/10 hover:bg-[#1E1E1E]"
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#252525] text-[#FF6A1A]">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-sans text-xs font-semibold text-white truncate">
+                            {skill.name}
+                          </p>
+                          {skill.note && (
+                            <p className="text-[10px] text-[#888888] truncate max-w-[150px] sm:max-w-[180px]">
+                              {skill.note}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      <span
+                        className={`shrink-0 rounded-md border px-2 py-0.5 font-mono text-[10px] font-medium ${badgeClass}`}
+                      >
+                        {skill.level}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </Section>
   );

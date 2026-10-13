@@ -3,14 +3,13 @@ import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { Experience } from "@/components/sections/Experience";
 import { Services } from "@/components/sections/Services";
 import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
 import { GithubActivity } from "@/components/sections/GithubActivity";
 import { Resume } from "@/components/sections/Resume";
-import { Timeline } from "@/components/sections/Timeline";
 import { Certifications } from "@/components/sections/Certifications";
-import { LanguagesSection } from "@/components/sections/LanguagesSection";
 import { Contact } from "@/components/sections/Contact";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -21,14 +20,13 @@ export default function App() {
       <main className="w-full max-w-full min-w-0 overflow-x-hidden">
         <Hero />
         <About />
+        <Experience />
         <Services />
         <TechStack />
         <Projects />
         <GithubActivity />
         <Resume />
-        <Timeline />
         <Certifications />
-        <LanguagesSection />
         <Contact />
       </main>
       <Footer />
