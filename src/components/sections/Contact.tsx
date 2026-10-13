@@ -60,7 +60,10 @@ export function Contact() {
       setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
       console.error("Email send failed:", error);
-      setSendError("Unable to send message right now. Please email directly or try again later.");
+      const message = error instanceof Error && error.message
+        ? error.message
+        : "Unable to send message right now. Please email directly or try again later.";
+      setSendError(message);
       setStatus("idle");
     }
   };
