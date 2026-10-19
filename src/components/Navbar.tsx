@@ -58,7 +58,7 @@ export function Navbar() {
     <>
       {/* Top progress line in orange */}
       <motion.div
-        className="fixed left-0 right-0 top-0 z-[70] h-[3px] origin-left bg-[#FF6A1A]"
+        className="fixed left-0 right-0 top-0 z-[70] h-[3px] origin-left bg-gradient-to-r from-[#FF6A1A]/40 via-[#FF6A1A] to-[#FFB37A] shadow-[0_0_12px_rgba(255,106,26,0.8)]"
         style={{ scaleX }}
       />
 

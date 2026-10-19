@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { Languages as LangIcon } from "lucide-react";
 import { Section } from "@/components/Section";
 import { languages } from "@/data/portfolio";
@@ -19,10 +20,7 @@ export function LanguagesSection() {
         {languages.map((l, i) => (
           <motion.div
             key={l.name}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.07 }}
+            {...revealCard(i)}
             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/40 hover:bg-[#1a1a1a]"
           >
             <div className="flex items-center gap-3.5">

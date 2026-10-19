@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { z } from "zod";
 import { Github, Linkedin, Mail, MapPin, Send, Loader2, CheckCircle2, Sparkles, MessageSquare } from "lucide-react";
 import { Section } from "@/components/Section";
@@ -83,10 +84,7 @@ export function Contact() {
         
         {/* LEFT COLUMN: Contact Form */}
         <motion.form
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...revealCard(0, "left")}
           onSubmit={onSubmit}
           className="rounded-3xl border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p-8 shadow-2xl w-full max-w-full min-w-0 overflow-hidden"
         >
@@ -184,10 +182,7 @@ export function Contact() {
 
         {/* RIGHT COLUMN: Contact Info Card */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...revealCard(1, "right")}
           className="space-y-6 max-w-full"
         >
           {/* Status Badge */}

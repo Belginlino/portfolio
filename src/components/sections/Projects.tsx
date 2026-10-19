@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import {
   ExternalLink,
   Github,
@@ -91,10 +92,8 @@ export function Projects() {
               <motion.article
                 layout
                 key={project.id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
+                {...revealCard(idx % 3)}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: idx * 0.04 }}
                 className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#141414] transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/50 hover:shadow-[0_0_30px_rgba(255,106,26,0.18)]"
               >
                 <div>

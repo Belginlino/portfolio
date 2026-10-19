@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { Briefcase, Building2, Calendar, MapPin, CheckCircle2, Award, Terminal } from "lucide-react";
 import { Section } from "@/components/Section";
 import { experiences } from "@/data/portfolio";
@@ -23,10 +24,7 @@ export function Experience() {
           return (
             <motion.article
               key={exp.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              {...revealCard(idx, idx % 2 === 0 ? "left" : "right")}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 sm:p-8 transition-all duration-300 hover:border-[#FF6A1A]/40 hover:bg-[#161616] hover:shadow-[0_0_30px_rgba(255,106,26,0.15)]"
             >
               {/* Type Badge & Status */}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { Section } from "@/components/Section";
 import { techStackCategories, type TechSkill, type SkillProficiency } from "@/data/portfolio";
 import {
@@ -101,10 +102,7 @@ export function TechStack() {
         {techStackCategories.map((group, groupIdx) => (
           <motion.div
             key={group.category}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: groupIdx * 0.06 }}
+            {...revealCard(groupIdx)}
             className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:border-[#FF6A1A]/40 hover:bg-[#161616] hover:shadow-[0_0_25px_rgba(255,106,26,0.15)]"
           >
             <div>

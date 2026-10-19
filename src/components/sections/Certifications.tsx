@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { Award } from "lucide-react";
 import { Section } from "@/components/Section";
 import { certifications } from "@/data/portfolio";
@@ -20,10 +21,7 @@ export function Certifications() {
         {certifications.map((c, i) => (
           <motion.div
             key={c.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: i * 0.05 }}
+            {...revealCard(i)}
             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/40 hover:bg-[#1a1a1a]"
           >
             <div className="flex items-start gap-4">

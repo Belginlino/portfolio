@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import {
   ArrowRight,
   Download,
@@ -16,6 +16,7 @@ import {
 import heroPhoto from "@/assets/hero-visual.jpg";
 import { personalInfo, stats } from "@/data/portfolio";
 import { useTypewriter } from "@/hooks/use-typewriter";
+import { isLowPower } from "@/components/motion/scroll";
 import { downloadResume } from "@/utils/downloadResume";
 
 const statIcons = [FolderGit2, Cpu, Clock, CheckCircle2];
@@ -23,6 +24,18 @@ const statIcons = [FolderGit2, Cpu, Clock, CheckCircle2];
 export function Hero() {
   const roleText = useTypewriter(personalInfo.roles, 70, 1600);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Scroll-out parallax: layers drift apart, shrink and fade as the hero leaves the viewport
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+  const textY = useTransform(progress, [0, 1], [0, -120]);
+  const photoY = useTransform(progress, [0, 1], [0, 160]);
+  const photoRotate = useTransform(progress, [0, 1], [0, -6]);
+  const statsY = useTransform(progress, [0, 1], [0, 60]);
+  const contentScale = useTransform(progress, [0, 1], [1, 0.9]);
+  const contentOpacity = useTransform(progress, [0, 0.7], [1, 0]);
+  const contentBlur = useTransform(progress, [0, 0.8], ["blur(0px)", "blur(8px)"]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -34,6 +47,7 @@ export function Hero() {
 
   return (
     <section
+      ref={heroRef}
       id="home"
       aria-label="Introduction and Hero"
       className="relative isolate min-h-screen overflow-hidden bg-[#0A0A0A] pt-32 pb-20 lg:pt-36 lg:pb-28"
@@ -53,7 +67,10 @@ export function Hero() {
       {/* Static soft ambient orange top light */}
       <div className="pointer-events-none absolute top-10 left-1/3 -z-10 h-72 w-96 rounded-full bg-[#FF6A1A]/10 blur-[130px]" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <motion.div
+        style={isLowPower ? undefined : { scale: contentScale, opacity: contentOpacity, filter: contentBlur }}
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+      >
         <div className="grid items-center gap-10 md:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr_auto] lg:gap-10 xl:gap-12">
           
           {/* LEFT: Text Content & CTAs */}
@@ -61,6 +78,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
+            style={isLowPower ? undefined : { y: textY }}
           >
             {/* Professional Headline Tagline */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#FF6A1A]/30 bg-[#FF6A1A]/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-[#FF6A1A]">
@@ -146,6 +164,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+            style={isLowPower ? undefined : { y: photoY, rotate: photoRotate }}
             className="relative flex justify-center py-4 sm:py-6 overflow-hidden"
           >
             {/* Glowing Orange Ring behind photo */}
@@ -174,6 +193,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            style={isLowPower ? undefined : { y: statsY }}
             className="col-span-1 md:col-span-2 lg:col-span-1 grid grid-cols-2 gap-3 p-4 sm:flex sm:flex-row sm:flex-wrap sm:justify-around sm:gap-4 sm:p-5 lg:flex-col lg:justify-center lg:gap-6 lg:p-6 rounded-2xl border border-white/10 bg-[#141414]"
           >
             {stats.map((item, idx) => {
@@ -198,7 +218,7 @@ export function Hero() {
           </motion.div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

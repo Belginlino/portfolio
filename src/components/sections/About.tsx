@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { Section } from "@/components/Section";
 import { personalInfo, education } from "@/data/portfolio";
 import {
@@ -54,10 +55,7 @@ export function About() {
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
         {/* Left Column: Personal Story & Education */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          {...revealCard(0)}
           className="space-y-6"
         >
           <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 sm:p-8 shadow-xl">
@@ -121,10 +119,7 @@ export function About() {
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                {...revealCard(idx)}
                 className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:border-[#FF6A1A]/40 hover:bg-[#1a1a1a] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,106,26,0.15)]"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FF6A1A]/10 text-[#FF6A1A] transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#FF6A1A] group-hover:text-white">

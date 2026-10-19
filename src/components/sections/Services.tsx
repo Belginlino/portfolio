@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { revealCard } from "@/components/motion/scroll";
 import { Section } from "@/components/Section";
 import { services } from "@/data/portfolio";
 import { Bot, Globe, Code2, Sparkles, ArrowRight } from "lucide-react";
@@ -29,10 +30,7 @@ export function Services() {
           return (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              {...revealCard(idx)}
               className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#141414] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6A1A]/50 hover:bg-[#161616] hover:shadow-[0_0_25px_rgba(255,106,26,0.15)]"
             >
               {/* Card top accent line on hover */}
