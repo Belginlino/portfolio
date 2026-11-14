@@ -2,7 +2,17 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { revealCard } from "@/components/motion/scroll";
 import { z } from "zod";
-import { Github, Linkedin, Mail, MapPin, Send, Loader2, CheckCircle2, Sparkles, MessageSquare } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Send,
+  Loader2,
+  CheckCircle2,
+  Sparkles,
+  MessageSquare,
+} from "lucide-react";
 import { Section } from "@/components/Section";
 import { personalInfo } from "@/data/portfolio";
 
@@ -39,7 +49,7 @@ export function Contact() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
           name: form.name,
@@ -61,9 +71,10 @@ export function Contact() {
       setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
       console.error("Email send failed:", error);
-      const message = error instanceof Error && error.message
-        ? error.message
-        : "Unable to send message right now. Please email directly or try again later.";
+      const message =
+        error instanceof Error && error.message
+          ? error.message
+          : "Unable to send message right now. Please email directly or try again later.";
       setSendError(message);
       setStatus("idle");
     }
@@ -81,7 +92,6 @@ export function Contact() {
       description="Have a project in mind, an internship opportunity, or want to discuss AI & web development? Send a message below!"
     >
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-14 items-start w-full max-w-full min-w-0">
-        
         {/* LEFT COLUMN: Contact Form */}
         <motion.form
           {...revealCard(0, "left")}
@@ -90,7 +100,9 @@ export function Contact() {
         >
           <div className="mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
             <MessageSquare className="h-5 w-5 text-[#FF6A1A]" />
-            <h3 className="font-hero text-lg sm:text-xl font-bold uppercase text-white">Send a Message</h3>
+            <h3 className="font-hero text-lg sm:text-xl font-bold uppercase text-white">
+              Send a Message
+            </h3>
           </div>
 
           <div className="space-y-4 sm:space-y-5">
@@ -111,7 +123,11 @@ export function Contact() {
                 className="w-full max-w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="John Doe"
               />
-              {errors.name && <p id="name-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.name}</p>}
+              {errors.name && (
+                <p id="name-error" className="mt-1.5 text-xs text-red-400 font-medium">
+                  {errors.name}
+                </p>
+              )}
             </div>
 
             <div>
@@ -132,7 +148,11 @@ export function Contact() {
                 className="w-full max-w-full min-h-[44px] rounded-xl border border-white/10 bg-[#0A0A0A] px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="john@example.com"
               />
-              {errors.email && <p id="email-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.email}</p>}
+              {errors.email && (
+                <p id="email-error" className="mt-1.5 text-xs text-red-400 font-medium">
+                  {errors.email}
+                </p>
+              )}
             </div>
 
             <div>
@@ -153,11 +173,19 @@ export function Contact() {
                 className="w-full max-w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0A] px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-[#737373] outline-none transition-all duration-200 focus:border-[#FF6A1A] focus:ring-2 focus:ring-[#FF6A1A]"
                 placeholder="Tell me about your project or idea..."
               />
-              {errors.message && <p id="message-error" className="mt-1.5 text-xs text-red-400 font-medium">{errors.message}</p>}
+              {errors.message && (
+                <p id="message-error" className="mt-1.5 text-xs text-red-400 font-medium">
+                  {errors.message}
+                </p>
+              )}
             </div>
           </div>
 
-          {sendError && <p className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs text-red-400">{sendError}</p>}
+          {sendError && (
+            <p className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs text-red-400">
+              {sendError}
+            </p>
+          )}
 
           <button
             type="submit"
@@ -181,10 +209,7 @@ export function Contact() {
         </motion.form>
 
         {/* RIGHT COLUMN: Contact Info Card */}
-        <motion.div
-          {...revealCard(1, "right")}
-          className="space-y-6 max-w-full"
-        >
+        <motion.div {...revealCard(1, "right")} className="space-y-6 max-w-full">
           {/* Status Badge */}
           <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
             <span className="relative flex h-3 w-3 shrink-0">
@@ -249,7 +274,13 @@ export function Contact() {
               );
 
               return href ? (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="block">
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
                   {content}
                 </a>
               ) : (
@@ -258,7 +289,6 @@ export function Contact() {
             })}
           </div>
         </motion.div>
-
       </div>
     </Section>
   );

@@ -41,8 +41,12 @@ export function Timeline() {
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#FF6A1A]">
                       {item.year}
                     </span>
-                    <h3 className="mt-1 font-display text-base font-bold text-white">{item.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-[#9A9A9A]">{item.description}</p>
+                    <h3 className="mt-1 font-display text-base font-bold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-[#9A9A9A]">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </motion.li>

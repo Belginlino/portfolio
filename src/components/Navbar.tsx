@@ -94,9 +94,7 @@ export function Navbar() {
                     <a
                       href={link.href}
                       className={`relative flex min-h-[44px] items-center rounded-full px-4 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A1A] ${
-                        isActive
-                          ? "text-white font-semibold"
-                          : "text-[#9A9A9A] hover:text-white"
+                        isActive ? "text-white font-semibold" : "text-[#9A9A9A] hover:text-white"
                       }`}
                     >
                       {link.label}

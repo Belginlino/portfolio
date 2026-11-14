@@ -14,6 +14,7 @@ Drop your screenshot images into this folder (`public/projects/`).
 ---
 
 ### File Format & Resolution
+
 - **Format**: PNG, JPG, or WebP
 - **Recommended Aspect Ratio**: 16:10 or 16:9 (e.g., 1280x800 or 1920x1080)
 - The images placed here will automatically display on the project cards and modal windows in your portfolio!

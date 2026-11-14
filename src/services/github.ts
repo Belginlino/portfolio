@@ -48,15 +48,21 @@ export const languageColors: Record<string, string> = {
 
 // Helpful descriptions for repos that don't have one set on GitHub
 export const repoFallbackDescriptions: Record<string, string> = {
-  ProjectFlow: "Collaborative project and workflow tracking platform built with modern TypeScript and responsive UI.",
-  "Fit-Tracker": "Cross-platform mobile fitness and health tracking app with exercise logging built in Dart.",
-  "Satquery-AI": "Intelligent satellite data query and analysis tool leveraging Python and AI models.",
+  ProjectFlow:
+    "Collaborative project and workflow tracking platform built with modern TypeScript and responsive UI.",
+  "Fit-Tracker":
+    "Cross-platform mobile fitness and health tracking app with exercise logging built in Dart.",
+  "Satquery-AI":
+    "Intelligent satellite data query and analysis tool leveraging Python and AI models.",
   QrCodeGenerator: "Dynamic real-time QR code generator and styling utility for web URLs and text.",
-  "Image-enhancer-and-BG-remover": "Computer vision and image utility for AI enhancement and automated background removal.",
+  "Image-enhancer-and-BG-remover":
+    "Computer vision and image utility for AI enhancement and automated background removal.",
   "Burj-Khalifa": "Interactive 3D/canvas architectural animation and showcase web experience.",
-  "Resume-Builder": "Modern interactive resume and CV builder with instant formatting and PDF export.",
+  "Resume-Builder":
+    "Modern interactive resume and CV builder with instant formatting and PDF export.",
   BusTracker: "Public transit navigation and live bus tracking system with route visualization.",
-  myself_productivityapp: "Personal productivity, task management, and focus tracking web application.",
+  myself_productivityapp:
+    "Personal productivity, task management, and focus tracking web application.",
 };
 
 export function getGithubStreakUrl(username: string = "belginlino"): string {
@@ -88,7 +94,8 @@ const FALLBACK_REPOS: GitHubRepo[] = [
     id: 1388139603,
     name: "ProjectFlow",
     full_name: "Belginlino/ProjectFlow",
-    description: "Collaborative project and workflow tracking platform built with modern TypeScript.",
+    description:
+      "Collaborative project and workflow tracking platform built with modern TypeScript.",
     html_url: "https://github.com/Belginlino/ProjectFlow",
     homepage: null,
     stargazers_count: 1,
@@ -212,7 +219,10 @@ const FALLBACK_REPOS: GitHubRepo[] = [
   },
 ];
 
-export async function fetchGitHubProfile(username: string = "belginlino", forceRefresh = false): Promise<GitHubProfile> {
+export async function fetchGitHubProfile(
+  username: string = "belginlino",
+  forceRefresh = false,
+): Promise<GitHubProfile> {
   const cacheKey = `gh_profile_${username.toLowerCase()}`;
   const cacheTimeKey = `${cacheKey}_time`;
 
@@ -259,7 +269,7 @@ export async function fetchGitHubProfile(username: string = "belginlino", forceR
 
 export async function fetchGitHubRepos(
   username: string = "belginlino",
-  forceRefresh = false
+  forceRefresh = false,
 ): Promise<GitHubRepo[]> {
   const cacheKey = `gh_repos_${username.toLowerCase()}`;
   const cacheTimeKey = `${cacheKey}_time`;
@@ -281,7 +291,7 @@ export async function fetchGitHubRepos(
       `https://api.github.com/users/${username}/repos?sort=updated&per_page=30`,
       {
         headers: { Accept: "application/vnd.github.v3+json" },
-      }
+      },
     );
 
     if (!res.ok) {

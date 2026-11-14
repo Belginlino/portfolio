@@ -54,10 +54,7 @@ export function About() {
     >
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
         {/* Left Column: Personal Story & Education */}
-        <motion.div
-          {...revealCard(0)}
-          className="space-y-6"
-        >
+        <motion.div {...revealCard(0)} className="space-y-6">
           <div className="rounded-2xl border border-white/10 bg-[#141414] p-6 sm:p-8 shadow-xl">
             <h3 className="font-hero text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-4">
               My Journey &amp; Focus
@@ -66,9 +63,11 @@ export function About() {
               {personalInfo.longBio}
             </p>
             <p className="mt-4 text-xs sm:text-sm leading-relaxed text-[#9A9A9A]">
-              My core technical focus centers on bridging <span className="text-white font-medium">Python backends</span>,{" "}
+              My core technical focus centers on bridging{" "}
+              <span className="text-white font-medium">Python backends</span>,{" "}
               <span className="text-[#FF6A1A] font-medium">responsive React frontends</span>, and{" "}
-              <span className="text-white font-medium">applied machine learning</span> to solve concrete operational problems.
+              <span className="text-white font-medium">applied machine learning</span> to solve
+              concrete operational problems.
             </p>
 
             {/* Quick Facts List */}
@@ -95,10 +94,7 @@ export function About() {
                   text: "Production-ready, Maintainable Code",
                 },
               ].map(({ Icon, label, text }) => (
-                <li
-                  key={label}
-                  className="rounded-xl border border-white/5 bg-[#1a1a1a] p-3.5"
-                >
+                <li key={label} className="rounded-xl border border-white/5 bg-[#1a1a1a] p-3.5">
                   <div className="flex items-center gap-2 text-[#FF6A1A] mb-1">
                     <Icon className="h-4 w-4" />
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[#A3A3A3]">
@@ -128,9 +124,7 @@ export function About() {
                 <h4 className="font-display text-base font-bold text-white mb-2 group-hover:text-[#FF6A1A] transition-colors">
                   {item.title}
                 </h4>
-                <p className="text-xs leading-relaxed text-[#9A9A9A]">
-                  {item.description}
-                </p>
+                <p className="text-xs leading-relaxed text-[#9A9A9A]">{item.description}</p>
               </motion.div>
             );
           })}

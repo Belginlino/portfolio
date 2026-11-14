@@ -21,7 +21,6 @@ export function Footer() {
     <footer className="relative border-t border-white/10 bg-[#070707] py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-3 lg:items-center">
-          
           {/* Logo & Tagline Left */}
           <div>
             <a href="#home" className="flex items-center gap-2.5">
@@ -33,7 +32,8 @@ export function Footer() {
               </span>
             </a>
             <p className="mt-3 max-w-sm font-sans text-xs leading-relaxed text-[#9A9A9A]">
-              AI Student &amp; Fullstack Developer crafting clean, intelligent web applications and Python automations.
+              AI &amp; Data Science Student &amp; Full Stack Developer crafting clean, intelligent
+              web applications and Python tools.
             </p>
           </div>
 
@@ -84,7 +84,6 @@ export function Footer() {
           <p className="font-mono text-xs text-[#A3A3A3]">
             © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
           </p>
-         
         </div>
       </div>
     </footer>

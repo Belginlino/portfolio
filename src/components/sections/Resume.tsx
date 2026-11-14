@@ -40,7 +40,8 @@ export function Resume() {
               Aspiring developer ready to contribute.
             </h3>
             <p className="mt-3 text-xs leading-relaxed text-[#9A9A9A] sm:text-sm">
-              From Python automation tools to React frontends — explore my hands-on project experience and qualifications.
+              From Python automation tools to React frontends — explore my hands-on project
+              experience and qualifications.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">

@@ -114,7 +114,9 @@ export function Projects() {
                     {project.image ? (
                       <img
                         src={project.image}
-                        alt={`${project.title} screenshot`}
+                        alt={`${project.title} - Project by Belgin Lino`}
+                        width={800}
+                        height={500}
                         loading="lazy"
                         className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       />
@@ -152,9 +154,7 @@ export function Projects() {
 
                     {/* Title inside visual area */}
                     <div className="absolute bottom-3 left-4 right-4">
-                      <span className="font-mono text-[11px] text-[#FF6A1A]">
-                        // 0{idx + 1}
-                      </span>
+                      <span className="font-mono text-[11px] text-[#FF6A1A]">// 0{idx + 1}</span>
                       <h3 className="font-display text-base sm:text-lg font-bold text-white line-clamp-1 group-hover:text-[#FF6A1A] transition-colors">
                         {project.title}
                       </h3>
@@ -163,9 +163,7 @@ export function Projects() {
 
                   {/* Card Body */}
                   <div className="p-5 pt-3">
-                    <p className="text-xs leading-relaxed text-[#9A9A9A]">
-                      {project.short}
-                    </p>
+                    <p className="text-xs leading-relaxed text-[#9A9A9A]">{project.short}</p>
 
                     {/* Problem Solved Snippet */}
                     <div className="mt-3 rounded-xl border border-white/5 bg-[#191919] p-2.5">
@@ -281,7 +279,7 @@ export function Projects() {
                 </span>
                 <span
                   className={`rounded-full border px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase ${getStatusBadge(
-                    active.status
+                    active.status,
                   )}`}
                 >
                   {active.status}
@@ -307,17 +305,13 @@ export function Projects() {
                   <h4 className="font-mono text-xs font-bold uppercase text-[#FF6A1A] mb-1.5 flex items-center gap-1.5">
                     <Layers className="h-3.5 w-3.5" /> Problem Context:
                   </h4>
-                  <p className="text-xs text-[#9A9A9A] leading-relaxed">
-                    {active.problem}
-                  </p>
+                  <p className="text-xs text-[#9A9A9A] leading-relaxed">{active.problem}</p>
                 </div>
                 <div className="rounded-xl border border-white/5 bg-[#191919] p-4">
                   <h4 className="font-mono text-xs font-bold uppercase text-emerald-400 mb-1.5 flex items-center gap-1.5">
                     <FileCheck2 className="h-3.5 w-3.5" /> Solution Engineered:
                   </h4>
-                  <p className="text-xs text-[#9A9A9A] leading-relaxed">
-                    {active.solution}
-                  </p>
+                  <p className="text-xs text-[#9A9A9A] leading-relaxed">{active.solution}</p>
                 </div>
               </div>
 
@@ -331,9 +325,7 @@ export function Projects() {
                 <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-white mb-1.5">
                   My Specific Contribution:
                 </h4>
-                <p className="text-xs text-[#9A9A9A] leading-relaxed">
-                  {active.contribution}
-                </p>
+                <p className="text-xs text-[#9A9A9A] leading-relaxed">{active.contribution}</p>
               </div>
 
               {/* Key Features Highlights */}

@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { revealCard } from "@/components/motion/scroll";
-import { Briefcase, Building2, Calendar, MapPin, CheckCircle2, Award, Terminal } from "lucide-react";
+import {
+  Briefcase,
+  Building2,
+  Calendar,
+  MapPin,
+  CheckCircle2,
+  Award,
+  Terminal,
+} from "lucide-react";
 import { Section } from "@/components/Section";
 import { experiences } from "@/data/portfolio";
 
@@ -35,8 +43,8 @@ export function Experience() {
                       isInternship
                         ? "border border-amber-500/30 bg-amber-500/10 text-amber-400"
                         : isTraining
-                        ? "border border-sky-500/30 bg-sky-500/10 text-sky-400"
-                        : "border border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                          ? "border border-sky-500/30 bg-sky-500/10 text-sky-400"
+                          : "border border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
                     }`}
                   >
                     {isInternship ? (

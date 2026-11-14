@@ -26,8 +26,18 @@ const ORANGE_PALETTE = [
 ];
 
 const MONTH_NAMES = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 const CACHE_KEY_PREFIX = "gh_contribs_";
@@ -194,7 +204,8 @@ export function GithubContributionGraph({ username = "belginlino" }: Props) {
               Contribution Heatmap
             </h4>
             <p className="text-xs text-[#8A8A8A]">
-              <span className="font-semibold text-white">{totalCount} contributions</span> in the last year
+              <span className="font-semibold text-white">{totalCount} contributions</span> in the
+              last year
             </p>
           </div>
         </div>

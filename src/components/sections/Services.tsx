@@ -48,9 +48,7 @@ export function Services() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs leading-relaxed text-[#9A9A9A]">
-                  {service.description}
-                </p>
+                <p className="text-xs leading-relaxed text-[#9A9A9A]">{service.description}</p>
               </div>
 
               {/* Functional Action Link */}

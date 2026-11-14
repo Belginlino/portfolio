@@ -1,89 +1,712 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A0A0A" />
 
-    <title>Belgin Lino | AI &amp; Data Science Student &amp; Full-Stack Developer</title>
+    <!-- Primary SEO Meta Tags -->
+    <title>Belgin Lino | AI &amp; Data Science Student &amp; Full Stack Developer</title>
+    <meta
+      name="title"
+      content="Belgin Lino | AI &amp; Data Science Student &amp; Full Stack Developer"
+    />
     <meta
       name="description"
-      content="Official portfolio of Belgin Lino SP — B.Tech Artificial Intelligence &amp; Data Science student and Full-Stack Developer building practical web applications, Python automation tools, and machine learning prototypes."
+      content="Discover the official portfolio of Belgin Lino, an AI &amp; Data Science student and Full Stack Developer. Explore software projects, technical skills, professional experience and certifications."
     />
-    <meta name="keywords" content="Belgin Lino, Belgin Lino SP, Full-Stack Developer, AI Engineer, Python Developer, React Developer, Django, St. Xavier's Catholic College, Developer Portfolio, Nagercoil" />
-    <meta name="author" content="Belgin Lino SP" />
+    <meta name="author" content="Belgin Lino" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
     <link rel="canonical" href="https://belginlino.in/" />
 
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://belginlino.in/" />
-    <meta property="og:title" content="Belgin Lino | AI &amp; Data Science Student &amp; Full-Stack Developer" />
+    <meta
+      property="og:title"
+      content="Belgin Lino | AI &amp; Data Science Student &amp; Full Stack Developer"
+    />
     <meta
       property="og:description"
-      content="Official portfolio of Belgin Lino SP — B.Tech AI &amp; Data Science student and Full-Stack Developer building practical web applications, Python automation tools, and machine learning prototypes."
+      content="Discover the official portfolio of Belgin Lino, an AI &amp; Data Science student and Full Stack Developer. Explore software projects, technical skills, professional experience and certifications."
     />
-    <meta property="og:image" content="https://belginlino.in/projects/lino-menswear.png" />
+    <meta property="og:image" content="https://belginlino.in/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Belgin Lino - AI &amp; Data Science Student and Full Stack Developer Portfolio"
+    />
     <meta property="og:site_name" content="Belgin Lino Portfolio" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="profile:first_name" content="Belgin" />
+    <meta property="profile:last_name" content="Lino" />
+    <meta property="profile:username" content="Belginlino" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://belginlino.in/" />
-    <meta name="twitter:title" content="Belgin Lino | AI &amp; Data Science Student &amp; Full-Stack Developer" />
+    <meta
+      name="twitter:title"
+      content="Belgin Lino | AI &amp; Data Science Student &amp; Full Stack Developer"
+    />
     <meta
       name="twitter:description"
-      content="Official portfolio of Belgin Lino SP — B.Tech AI &amp; Data Science student and Full-Stack Developer building practical web applications, Python automation tools, and machine learning prototypes."
+      content="Discover the official portfolio of Belgin Lino, an AI &amp; Data Science student and Full Stack Developer. Explore software projects, technical skills, professional experience and certifications."
     />
-    <meta name="twitter:image" content="https://belginlino.in/projects/lino-menswear.png" />
+    <meta name="twitter:image" content="https://belginlino.in/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Belgin Lino - AI &amp; Data Science Student and Full Stack Developer Portfolio"
+    />
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Belgin Lino SP",
-        "alternateName": "Belgin Lino",
-        "url": "https://belginlino.in",
-        "email": "belginlino485@gmail.com",
-        "jobTitle": "Full-Stack Developer & AI Student",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Nex X Spark"
-        },
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "St. Xavier's Catholic College of Engineering",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Chunkankadai, Nagercoil",
-            "addressRegion": "Tamil Nadu",
-            "addressCountry": "India"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://belginlino.in/#website",
+            "url": "https://belginlino.in/",
+            "name": "Belgin Lino Portfolio",
+            "description": "Official portfolio website of Belgin Lino, AI & Data Science Student and Full Stack Developer.",
+            "publisher": {
+              "@id": "https://belginlino.in/#person"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://belginlino.in/#profilepage",
+            "url": "https://belginlino.in/",
+            "name": "Belgin Lino | AI & Data Science Student & Full Stack Developer",
+            "description": "Discover the official portfolio of Belgin Lino, an AI & Data Science student and Full Stack Developer. Explore software projects, technical skills, professional experience and certifications.",
+            "isPartOf": {
+              "@id": "https://belginlino.in/#website"
+            },
+            "about": {
+              "@id": "https://belginlino.in/#person"
+            },
+            "mainEntity": {
+              "@id": "https://belginlino.in/#person"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://belginlino.in/#person",
+            "name": "Belgin Lino",
+            "alternateName": ["Belgin Lino SP", "Belgin"],
+            "url": "https://belginlino.in/",
+            "image": "https://belginlino.in/og-image.png",
+            "jobTitle": "Full Stack Developer",
+            "description": "AI & Data Science student and developer interested in software development, web technologies and artificial intelligence.",
+            "email": "belginlino485@gmail.com",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Nex X Spark"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "St. Xavier's Catholic College of Engineering",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Chunkankadai, Nagercoil",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "India"
+              }
+            },
+            "knowsAbout": [
+              "Full Stack Web Development",
+              "Artificial Intelligence",
+              "Python",
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "Django",
+              "Flask",
+              "Machine Learning",
+              "Data Science",
+              "Tailwind CSS"
+            ],
+            "sameAs": ["https://github.com/Belginlino", "https://linkedin.com/in/belginlino"]
           }
-        },
-        "knowsAbout": [
-          "Artificial Intelligence",
-          "Python",
-          "React",
-          "JavaScript",
-          "TypeScript",
-          "Django",
-          "Flask",
-          "Full-Stack Web Development",
-          "Machine Learning"
-        ],
-        "sameAs": [
-          "https://github.com/Belginlino",
-          "https://linkedin.com/in/belginlino"
         ]
       }
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Pre-rendered Semantic Shell for Search Crawlers and Initial Render -->
+    <div id="root">
+      <div
+        class="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#0A0A0A] text-[#F5F5F5]"
+      >
+        <!-- Accessible Navigation -->
+        <nav
+          aria-label="Main Navigation"
+          class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 border-b border-white/10 px-4 py-4"
+        >
+          <div class="mx-auto max-w-7xl flex items-center justify-between">
+            <a href="#home" class="font-bold text-white text-lg tracking-wider"
+              >BELGIN <span style="color: #ff6a1a">LINO</span></a
+            >
+            <div class="hidden sm:flex gap-6 text-sm text-[#A3A3A3]">
+              <a href="#about" class="hover:text-white">About</a>
+              <a href="#experience" class="hover:text-white">Experience</a>
+              <a href="#services" class="hover:text-white">Services</a>
+              <a href="#stack" class="hover:text-white">Tech Stack</a>
+              <a href="#projects" class="hover:text-white">Projects</a>
+              <a href="#certifications" class="hover:text-white">Certifications</a>
+              <a href="#contact" class="hover:text-white">Contact</a>
+            </div>
+          </div>
+        </nav>
+
+        <main class="w-full max-w-full min-w-0 pt-24">
+          <!-- Hero Section -->
+          <section id="home" aria-label="Hero" class="px-4 py-16 sm:py-24 max-w-7xl mx-auto">
+            <div
+              class="inline-block border border-[#FF6A1A]/30 bg-[#FF6A1A]/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#FF6A1A]"
+            >
+              AI &amp; Data Science Student | Full Stack Developer
+            </div>
+            <h1
+              class="mt-4 text-4xl sm:text-6xl font-extrabold uppercase text-white tracking-tight"
+            >
+              Belgin Lino – AI &amp; Data Science Student and Full Stack Developer
+            </h1>
+            <p class="mt-4 max-w-2xl text-base text-[#9A9A9A] leading-relaxed">
+              B.Tech Artificial Intelligence &amp; Data Science student at St. Xavier's Catholic
+              College of Engineering. I build practical web applications, Python automation tools,
+              and machine learning prototypes with clean code and modern developer ergonomics.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                class="bg-[#FF6A1A] text-white px-5 py-3 rounded-xl font-bold text-xs uppercase tracking-wider"
+                >View Projects</a
+              >
+              <a
+                href="/Belgin_Lino_Resume.pdf"
+                class="border border-[#FF6A1A]/40 bg-[#141414] text-white px-5 py-3 rounded-xl font-bold text-xs uppercase tracking-wider"
+                >Download Resume</a
+              >
+              <a
+                href="#contact"
+                class="border border-white/10 bg-[#1A1A1A] text-white px-5 py-3 rounded-xl font-bold text-xs uppercase tracking-wider"
+                >Contact Me</a
+              >
+            </div>
+            <div class="mt-6 flex items-center gap-4 text-sm text-[#9A9A9A]">
+              <span>Follow:</span>
+              <a
+                href="https://github.com/Belginlino"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #ff6a1a"
+                >GitHub</a
+              >
+              <a
+                href="https://linkedin.com/in/belginlino"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #ff6a1a"
+                >LinkedIn</a
+              >
+              <a href="mailto:belginlino485@gmail.com" style="color: #ff6a1a">Email</a>
+            </div>
+          </section>
+
+          <!-- About Section -->
+          <section
+            id="about"
+            aria-label="About Belgin Lino"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              About Belgin Lino
+            </h2>
+            <p class="mt-4 max-w-3xl text-sm sm:text-base text-[#9A9A9A] leading-relaxed">
+              I'm Belgin Lino, currently pursuing my B.Tech degree in Artificial Intelligence &amp;
+              Data Science at St. Xavier's Catholic College of Engineering, Chunkankadai (Nagercoil,
+              Tamil Nadu). I specialize in combining Python backends, modern React user interfaces,
+              and machine learning models to solve practical business and educational challenges.
+              From point-of-sale systems to academic intelligence platforms, I am passionate about
+              writing maintainable code and building end-to-end applications.
+            </p>
+          </section>
+
+          <!-- Experience Section -->
+          <section
+            id="experience"
+            aria-label="Experience &amp; Internships"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              Practical Experience &amp; Internships
+            </h2>
+            <div class="mt-8 space-y-6">
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="text-xl font-bold text-white">Software Developer – Nex X Spark</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">
+                  2026 — Present · Tamil Nadu, India
+                </p>
+                <p class="text-sm text-[#9A9A9A] mt-3">
+                  Contributing to full-stack frontend architecture, responsive component libraries,
+                  and system integrations for real-world software applications.
+                </p>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="text-xl font-bold text-white">
+                  Full-Stack Web Development Trainee – AK Infopark
+                </h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">
+                  Professional Certification Program · Nagercoil, Tamil Nadu
+                </p>
+                <p class="text-sm text-[#9A9A9A] mt-3">
+                  Hands-on full-stack development training covering responsive frontend web
+                  interfaces with React, state management, and server integrations.
+                </p>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="text-xl font-bold text-white">
+                  Java Trainee / Intern – White Aura X Pvt. Ltd.
+                </h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">
+                  Verified Internship Program · Thiruvananthapuram, Kerala
+                </p>
+                <p class="text-sm text-[#9A9A9A] mt-3">
+                  Completed structured Java engineering program practicing core OOP design patterns,
+                  algorithmic logic, and backend problem-solving.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Services Section -->
+          <section
+            id="services"
+            aria-label="Specialized Services"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              Specialized Technical Services
+            </h2>
+            <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+              <li class="p-5 rounded-xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white">Full-Stack Web Development</h3>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Engineering responsive, high-speed web apps with React, TypeScript, Tailwind CSS,
+                  Python (Django/Flask), and relational/NoSQL databases.
+                </p>
+              </li>
+              <li class="p-5 rounded-xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white">Python Tools &amp; Automation</h3>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Developing custom Python scripts, data preprocessing pipelines, CLI utilities, and
+                  task automation workflows.
+                </p>
+              </li>
+              <li class="p-5 rounded-xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white">AI &amp; Machine Learning Prototypes</h3>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Integrating predictive ML models and computer vision pipelines into accessible web
+                  applications.
+                </p>
+              </li>
+              <li class="p-5 rounded-xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white">UI/UX &amp; Frontend Development</h3>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Designing clean, dark-mode-first, accessible web interfaces with modern ergonomic
+                  interactions.
+                </p>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Tech Stack Section -->
+          <section
+            id="stack"
+            aria-label="Technical Skills"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              Technical Skills &amp; Stack
+            </h2>
+            <p class="text-sm text-[#9A9A9A] mt-3">
+              Core languages, frameworks, databases, and deployment platforms used across projects:
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Python</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >JavaScript</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >TypeScript</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Java</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >React</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Tailwind CSS</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Django</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Flask</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Scikit-Learn</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >MySQL</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Firebase Firestore</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Git &amp; GitHub</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Linux (Ubuntu)</span
+              >
+              <span class="px-3 py-1.5 rounded-lg border border-white/10 bg-[#141414] text-white"
+                >Cloudflare Pages</span
+              >
+            </div>
+          </section>
+
+          <!-- Featured Projects Section -->
+          <section
+            id="projects"
+            aria-label="Featured Projects"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              Featured Technical Projects
+            </h2>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white text-lg">DEVARAJAN TRADERS POS</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">Production Retail POS System</p>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Production web system featuring real-time invoice calculation, barcode lookup,
+                  inventory tracking, role-based access control, and sales reporting.
+                </p>
+                <p class="text-xs text-[#737373] mt-2 font-mono">
+                  React · TypeScript · Firebase Firestore · Tailwind CSS
+                </p>
+                <div class="mt-4 flex gap-4 text-xs font-semibold">
+                  <a
+                    href="https://github.com/Belginlino/billing-software"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #ff6a1a"
+                    >GitHub Repository</a
+                  >
+                  <a
+                    href="https://billing-software.pages.dev/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white"
+                    >Live Demo</a
+                  >
+                </div>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white text-lg">Django E-Commerce Storefront</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">Full-Stack Python Application</p>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Full-stack e-commerce web app built on Django featuring keyword search, category
+                  filtering, user registration, cart session handling, and admin panel.
+                </p>
+                <p class="text-xs text-[#737373] mt-2 font-mono">
+                  Python · Django · SQLite / MySQL · Bootstrap
+                </p>
+                <div class="mt-4">
+                  <a
+                    href="https://github.com/Belginlino"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #ff6a1a"
+                    >GitHub Repository</a
+                  >
+                </div>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white text-lg">Heart Disease Risk Prediction</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">Machine Learning Web Prototype</p>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Machine learning prototype taking clinical patient metrics, executing feature
+                  preprocessing, and generating risk probability outputs via Flask interface.
+                </p>
+                <p class="text-xs text-[#737373] mt-2 font-mono">
+                  Python · Scikit-Learn · Pandas · NumPy · Flask
+                </p>
+                <div class="mt-4">
+                  <a
+                    href="https://github.com/Belginlino"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #ff6a1a"
+                    >GitHub Repository</a
+                  >
+                </div>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white text-lg">ProjectFlow Intelligence</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">
+                  Academic Project Tracking Platform
+                </p>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Centralized academic project intelligence platform wrapping task execution into
+                  verifiable evidence artifacts, mentor evaluation rubrics, and audit trails.
+                </p>
+                <p class="text-xs text-[#737373] mt-2 font-mono">
+                  TypeScript · React · Node.js · Vite · Tailwind CSS
+                </p>
+                <div class="mt-4">
+                  <a
+                    href="https://github.com/Belginlino/ProjectFlow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #ff6a1a"
+                    >GitHub Repository</a
+                  >
+                </div>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white text-lg">BusTracker Live Transit</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">Real-Time Geolocation Tracking</p>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Live GPS bus tracking system with custom Leaflet map markers, real-time Firestore
+                  listeners, and passenger ETA calculation.
+                </p>
+                <p class="text-xs text-[#737373] mt-2 font-mono">
+                  JavaScript · Leaflet · Firebase Firestore · Web APIs
+                </p>
+                <div class="mt-4">
+                  <a
+                    href="https://github.com/Belginlino/BusTracker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #ff6a1a"
+                    >GitHub Repository</a
+                  >
+                </div>
+              </article>
+              <article class="p-6 rounded-2xl border border-white/10 bg-[#141414]">
+                <h3 class="font-bold text-white text-lg">Child Jesus School ERP</h3>
+                <p class="text-xs text-[#FF6A1A] font-mono mt-1">
+                  Administrative School Management
+                </p>
+                <p class="text-xs text-[#9A9A9A] mt-2">
+                  Educational institution management ERP system for student admission tracking,
+                  staff department assignment, and tuition fee status logs.
+                </p>
+                <p class="text-xs text-[#737373] mt-2 font-mono">
+                  JavaScript · React · Tailwind CSS · Vercel
+                </p>
+                <div class="mt-4 flex gap-4 text-xs font-semibold">
+                  <a
+                    href="https://github.com/Belginlino/cjmhsserp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #ff6a1a"
+                    >GitHub Repository</a
+                  >
+                  <a
+                    href="https://cjmhsserp.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white"
+                    >Live Demo</a
+                  >
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Certifications Section -->
+          <section
+            id="certifications"
+            aria-label="Certifications"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              Certifications &amp; Credentials
+            </h2>
+            <ul class="mt-6 space-y-3">
+              <li class="p-4 rounded-xl border border-white/10 bg-[#141414] text-sm text-[#E5E5E5]">
+                <strong>Fullstack Web Development</strong> — AK Infopark (2024)
+              </li>
+              <li class="p-4 rounded-xl border border-white/10 bg-[#141414] text-sm text-[#E5E5E5]">
+                <strong>Java Trainee / Intern</strong> — White Aura X Pvt. Ltd. (2024)
+              </li>
+              <li class="p-4 rounded-xl border border-white/10 bg-[#141414] text-sm text-[#E5E5E5]">
+                <strong>Machine Learning Course</strong> — Course Completion (2025)
+              </li>
+              <li class="p-4 rounded-xl border border-white/10 bg-[#141414] text-sm text-[#E5E5E5]">
+                <strong>React JS Web Development</strong> — Specialized Training (2025)
+              </li>
+            </ul>
+          </section>
+
+          <!-- Contact Section -->
+          <section
+            id="contact"
+            aria-label="Contact Information"
+            class="px-4 py-16 max-w-7xl mx-auto border-t border-white/5"
+          >
+            <h2 class="text-2xl sm:text-4xl font-extrabold uppercase text-white">
+              Contact Belgin Lino
+            </h2>
+            <p class="text-sm text-[#9A9A9A] mt-3">
+              Interested in collaboration, internship opportunities, or full-stack software
+              development? Reach out directly:
+            </p>
+            <div class="mt-6 space-y-2 text-sm">
+              <p>
+                Email:
+                <a href="mailto:belginlino485@gmail.com" style="color: #ff6a1a"
+                  >belginlino485@gmail.com</a
+                >
+              </p>
+              <p>
+                GitHub:
+                <a
+                  href="https://github.com/Belginlino"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: #ff6a1a"
+                  >https://github.com/Belginlino</a
+                >
+              </p>
+              <p>
+                LinkedIn:
+                <a
+                  href="https://linkedin.com/in/belginlino"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: #ff6a1a"
+                  >https://linkedin.com/in/belginlino</a
+                >
+              </p>
+              <p>Location: Nagercoil, Tamil Nadu, India</p>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer
+          class="border-t border-white/10 px-4 py-12 max-w-7xl mx-auto text-center text-xs text-[#737373]"
+        >
+          <p>© 2026 Belgin Lino. All rights reserved. Official Personal Portfolio Website.</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Fallback Content for Crawlers and Non-JS Clients -->
+    <noscript>
+      <div
+        style="
+          max-width: 800px;
+          margin: 40px auto;
+          padding: 24px;
+          font-family: sans-serif;
+          color: #f5f5f5;
+          background: #0a0a0a;
+          line-height: 1.6;
+        "
+      >
+        <h1>Belgin Lino – AI &amp; Data Science Student and Full Stack Developer</h1>
+        <p>
+          Discover the official portfolio of Belgin Lino, an AI &amp; Data Science student and Full
+          Stack Developer. Explore software projects, technical skills, professional experience and
+          certifications.
+        </p>
+
+        <h2>About Belgin Lino</h2>
+        <p>
+          B.Tech Artificial Intelligence &amp; Data Science student at St. Xavier's Catholic College
+          of Engineering, Chunkankadai (Nagercoil, Tamil Nadu). Building practical web applications,
+          Python automation tools, and machine learning prototypes with clean code and modern
+          developer ergonomics.
+        </p>
+
+        <h2>Technical Skills</h2>
+        <p>
+          Python, JavaScript, TypeScript, Java, React, HTML5, CSS3, Tailwind CSS, Django, Flask,
+          MySQL, SQLite, Firebase Firestore, Scikit-Learn, Pandas, NumPy, Git, GitHub, Linux.
+        </p>
+
+        <h2>Featured Projects</h2>
+        <ul>
+          <li>
+            <strong>DEVARAJAN TRADERS POS:</strong> Retail Point of Sale &amp; store management ERP
+            with real-time billing and inventory logs.
+          </li>
+          <li>
+            <strong>Django E-Commerce Storefront:</strong> Full-featured online storefront with
+            product listings, search, cart, and authentication.
+          </li>
+          <li>
+            <strong>Heart Disease Risk Prediction Web App:</strong> Machine learning demonstration
+            predicting heart disease risk based on clinical health parameters.
+          </li>
+          <li>
+            <strong>ProjectFlow Intelligence:</strong> Evidence-centered academic project
+            intelligence platform with milestone tracking.
+          </li>
+          <li>
+            <strong>Child Jesus School ERP:</strong> Educational institution management ERP system
+            for student databases and staff records.
+          </li>
+        </ul>
+
+        <h2>Connect &amp; Social Links</h2>
+        <p>
+          GitHub:
+          <a href="https://github.com/Belginlino" style="color: #ff6a1a"
+            >https://github.com/Belginlino</a
+          ><br />
+          LinkedIn:
+          <a href="https://linkedin.com/in/belginlino" style="color: #ff6a1a"
+            >https://linkedin.com/in/belginlino</a
+          ><br />
+          Email:
+          <a href="mailto:belginlino485@gmail.com" style="color: #ff6a1a"
+            >belginlino485@gmail.com</a
+          >
+        </p>
+      </div>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

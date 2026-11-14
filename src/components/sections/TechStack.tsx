@@ -114,9 +114,7 @@ export function TechStack() {
                   {group.items.length} skills
                 </span>
               </div>
-              <p className="mt-2 text-xs text-[#8A8A8A] leading-relaxed">
-                {group.description}
-              </p>
+              <p className="mt-2 text-xs text-[#8A8A8A] leading-relaxed">{group.description}</p>
 
               {/* Items in this category */}
               <div className="mt-5 space-y-3">

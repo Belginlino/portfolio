@@ -14,14 +14,14 @@ export interface PersonalInfo {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: "Belgin Lino SP",
+  name: "Belgin Lino",
   shortName: "Belgin",
-  roles: ["Full-Stack Developer", "Python Developer", "AI Enthusiast"],
-  headline: "AI & Data Science Student | Full-Stack Developer",
+  roles: ["Full Stack Developer", "Python Developer", "AI & Data Science Student"],
+  headline: "AI & Data Science Student | Full Stack Developer",
   tagline: "Building Practical Web Applications · Python Tools · Machine Learning Prototypes",
   bio: "B.Tech Artificial Intelligence & Data Science student at St. Xavier's Catholic College of Engineering. I build practical web applications, Python automation tools, and machine learning prototypes with clean code and modern developer ergonomics.",
   longBio:
-    "I'm Belgin Lino SP, currently pursuing my B.Tech degree in Artificial Intelligence & Data Science at St. Xavier's Catholic College of Engineering, Chunkankadai (Nagercoil, Tamil Nadu). I specialize in combining Python backends, modern React user interfaces, and machine learning models to solve practical business and educational challenges. From point-of-sale systems to academic intelligence platforms, I am passionate about writing maintainable code and building end-to-end applications.",
+    "I'm Belgin Lino, currently pursuing my B.Tech degree in Artificial Intelligence & Data Science at St. Xavier's Catholic College of Engineering, Chunkankadai (Nagercoil, Tamil Nadu). I specialize in combining Python backends, modern React user interfaces, and machine learning models to solve practical business and educational challenges. From point-of-sale systems to academic intelligence platforms, I am passionate about writing maintainable code and building end-to-end applications.",
   email: "belginlino485@gmail.com",
   location: "Nagercoil, Tamil Nadu, India",
   github: "https://github.com/Belginlino",
@@ -132,61 +132,186 @@ export const techStackCategories: TechGroup[] = [
     category: "Programming Languages",
     description: "Core languages used across software applications, data processing, and scripting",
     items: [
-      { name: "Python", level: "Project Experience", iconName: "Terminal", note: "FastAPI, Flask, Django, automation" },
-      { name: "JavaScript", level: "Project Experience", iconName: "Code2", note: "ES6+, DOM, async/await, modern tooling" },
-      { name: "Java", level: "Project Experience", iconName: "Coffee", note: "OOP principles, core Java internship" },
-      { name: "TypeScript", level: "Practicing", iconName: "FileCode", note: "Typed components, strict props, interfaces" },
-      { name: "C", level: "Familiar", iconName: "Cpu", note: "Procedural logic & fundamental algorithms" },
+      {
+        name: "Python",
+        level: "Project Experience",
+        iconName: "Terminal",
+        note: "FastAPI, Flask, Django, automation",
+      },
+      {
+        name: "JavaScript",
+        level: "Project Experience",
+        iconName: "Code2",
+        note: "ES6+, DOM, async/await, modern tooling",
+      },
+      {
+        name: "Java",
+        level: "Project Experience",
+        iconName: "Coffee",
+        note: "OOP principles, core Java internship",
+      },
+      {
+        name: "TypeScript",
+        level: "Practicing",
+        iconName: "FileCode",
+        note: "Typed components, strict props, interfaces",
+      },
+      {
+        name: "C",
+        level: "Familiar",
+        iconName: "Cpu",
+        note: "Procedural logic & fundamental algorithms",
+      },
     ],
   },
   {
     category: "Frontend Development",
     description: "UI frameworks and styling standards for responsive, accessible web interfaces",
     items: [
-      { name: "React", level: "Project Experience", iconName: "Layers", note: "Hooks, SPA routing, modular components" },
-      { name: "HTML5", level: "Project Experience", iconName: "Globe", note: "Semantic structure & WCAG standards" },
-      { name: "CSS3", level: "Project Experience", iconName: "Layout", note: "Flexbox, Grid, custom styling, animations" },
-      { name: "Tailwind CSS", level: "Project Experience", iconName: "Sparkles", note: "Utility-first modern design systems" },
-      { name: "Vite", level: "Project Experience", iconName: "Zap", note: "Fast HMR and production bundling" },
+      {
+        name: "React",
+        level: "Project Experience",
+        iconName: "Layers",
+        note: "Hooks, SPA routing, modular components",
+      },
+      {
+        name: "HTML5",
+        level: "Project Experience",
+        iconName: "Globe",
+        note: "Semantic structure & WCAG standards",
+      },
+      {
+        name: "CSS3",
+        level: "Project Experience",
+        iconName: "Layout",
+        note: "Flexbox, Grid, custom styling, animations",
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Project Experience",
+        iconName: "Sparkles",
+        note: "Utility-first modern design systems",
+      },
+      {
+        name: "Vite",
+        level: "Project Experience",
+        iconName: "Zap",
+        note: "Fast HMR and production bundling",
+      },
     ],
   },
   {
     category: "Backend Development",
     description: "Server frameworks, RESTful web services, and application logic",
     items: [
-      { name: "Django", level: "Project Experience", iconName: "Server", note: "ORM models, admin dashboard, auth" },
-      { name: "Flask", level: "Project Experience", iconName: "Cpu", note: "Lightweight APIs and microservices" },
-      { name: "REST APIs", level: "Project Experience", iconName: "Network", note: "CRUD endpoints, JSON schemas, headers" },
+      {
+        name: "Django",
+        level: "Project Experience",
+        iconName: "Server",
+        note: "ORM models, admin dashboard, auth",
+      },
+      {
+        name: "Flask",
+        level: "Project Experience",
+        iconName: "Cpu",
+        note: "Lightweight APIs and microservices",
+      },
+      {
+        name: "REST APIs",
+        level: "Project Experience",
+        iconName: "Network",
+        note: "CRUD endpoints, JSON schemas, headers",
+      },
     ],
   },
   {
     category: "Databases & Storage",
     description: "Relational data modeling, cloud datastores, and state persistence",
     items: [
-      { name: "MySQL", level: "Project Experience", iconName: "Database", note: "Relational schema design & queries" },
-      { name: "SQLite", level: "Project Experience", iconName: "HardDrive", note: "Embedded local development databases" },
-      { name: "Firebase Firestore", level: "Project Experience", iconName: "Cloud", note: "Real-time NoSQL synchronization" },
+      {
+        name: "MySQL",
+        level: "Project Experience",
+        iconName: "Database",
+        note: "Relational schema design & queries",
+      },
+      {
+        name: "SQLite",
+        level: "Project Experience",
+        iconName: "HardDrive",
+        note: "Embedded local development databases",
+      },
+      {
+        name: "Firebase Firestore",
+        level: "Project Experience",
+        iconName: "Cloud",
+        note: "Real-time NoSQL synchronization",
+      },
     ],
   },
   {
     category: "AI & Machine Learning",
     description: "Predictive model pipelines, preprocessing, and computer vision tools",
     items: [
-      { name: "Scikit-Learn", level: "Practicing", iconName: "Flame", note: "Classification models & preprocessing" },
-      { name: "Pandas & NumPy", level: "Project Experience", iconName: "Binary", note: "Data cleaning, matrices & analysis" },
-      { name: "Computer Vision", level: "Practicing", iconName: "Eye", note: "Image enhancement & background removal" },
-      { name: "Model Integration", level: "Project Experience", iconName: "Bot", note: "Connecting Python inference to web UIs" },
+      {
+        name: "Scikit-Learn",
+        level: "Practicing",
+        iconName: "Flame",
+        note: "Classification models & preprocessing",
+      },
+      {
+        name: "Pandas & NumPy",
+        level: "Project Experience",
+        iconName: "Binary",
+        note: "Data cleaning, matrices & analysis",
+      },
+      {
+        name: "Computer Vision",
+        level: "Practicing",
+        iconName: "Eye",
+        note: "Image enhancement & background removal",
+      },
+      {
+        name: "Model Integration",
+        level: "Project Experience",
+        iconName: "Bot",
+        note: "Connecting Python inference to web UIs",
+      },
     ],
   },
   {
     category: "Developer Tools & Deployment",
     description: "Version control, Linux environments, and modern cloud hosting",
     items: [
-      { name: "Git", level: "Project Experience", iconName: "GitBranch", note: "Branching, rebasing, commits, PR workflows" },
-      { name: "GitHub", level: "Project Experience", iconName: "Github", note: "Repo management, issues, GitHub Actions" },
-      { name: "Linux / Ubuntu", level: "Practicing", iconName: "TerminalSquare", note: "Bash commands, Nginx, server management" },
-      { name: "VS Code", level: "Project Experience", iconName: "Code", note: "Primary IDE, debugging, extensions" },
-      { name: "Cloudflare & Vercel", level: "Project Experience", iconName: "UploadCloud", note: "Static hosting, DNS, custom domains" },
+      {
+        name: "Git",
+        level: "Project Experience",
+        iconName: "GitBranch",
+        note: "Branching, rebasing, commits, PR workflows",
+      },
+      {
+        name: "GitHub",
+        level: "Project Experience",
+        iconName: "Github",
+        note: "Repo management, issues, GitHub Actions",
+      },
+      {
+        name: "Linux / Ubuntu",
+        level: "Practicing",
+        iconName: "TerminalSquare",
+        note: "Bash commands, Nginx, server management",
+      },
+      {
+        name: "VS Code",
+        level: "Project Experience",
+        iconName: "Code",
+        note: "Primary IDE, debugging, extensions",
+      },
+      {
+        name: "Cloudflare & Vercel",
+        level: "Project Experience",
+        iconName: "UploadCloud",
+        note: "Static hosting, DNS, custom domains",
+      },
     ],
   },
 ];
@@ -240,7 +365,8 @@ export const projects: Project[] = [
   {
     id: "django-ecommerce",
     title: "Django E-Commerce Storefront",
-    short: "Full-featured online storefront with product listings, search, cart, and authentication.",
+    short:
+      "Full-featured online storefront with product listings, search, cart, and authentication.",
     problem:
       "Small merchants require reliable, self-hosted e-commerce capabilities with structured product catalogs, secure user sessions, and straightforward inventory administration.",
     solution:
@@ -263,7 +389,8 @@ export const projects: Project[] = [
   {
     id: "heart-disease-prediction",
     title: "Heart Disease Risk Prediction Web App",
-    short: "Machine learning demonstration predicting heart disease risk based on clinical health parameters.",
+    short:
+      "Machine learning demonstration predicting heart disease risk based on clinical health parameters.",
     problem:
       "Demonstrating how predictive machine learning workflows can ingest patient health metrics, clean feature vectors, and provide immediate risk classification.",
     solution:
@@ -360,7 +487,8 @@ export const projects: Project[] = [
   {
     id: "linux-server-portfolio",
     title: "Linux Web Server & Cloud Hosting",
-    short: "Self-hosted Linux server infrastructure configuring Nginx, SSL, and continuous deployment.",
+    short:
+      "Self-hosted Linux server infrastructure configuring Nginx, SSL, and continuous deployment.",
     problem:
       "Understanding full-stack web development requires real-world experience configuring web servers, DNS routing, reverse proxies, and production server security.",
     solution:
@@ -479,27 +607,32 @@ export const timeline = [
   {
     year: "2024",
     title: "Started Engineering Journey",
-    description: "Enrolled in B.Tech AI & Data Science at St. Xavier's Catholic College of Engineering, Chunkankadai.",
+    description:
+      "Enrolled in B.Tech AI & Data Science at St. Xavier's Catholic College of Engineering, Chunkankadai.",
   },
   {
     year: "2024",
     title: "Java Trainee / Intern at White Aura X",
-    description: "Completed structured Java internship in Thiruvananthapuram, mastering OOP architectures and algorithms.",
+    description:
+      "Completed structured Java internship in Thiruvananthapuram, mastering OOP architectures and algorithms.",
   },
   {
     year: "2024",
     title: "Full-Stack Training at AK Infopark",
-    description: "Earned Full-Stack Web Development certification, building responsive client-server web apps.",
+    description:
+      "Earned Full-Stack Web Development certification, building responsive client-server web apps.",
   },
   {
     year: "2025",
     title: "Engineered Retail POS & ML Prototypes",
-    description: "Built DEVARAJAN TRADERS POS, Heart Disease risk prediction prototype, and academic intelligence platforms.",
+    description:
+      "Built DEVARAJAN TRADERS POS, Heart Disease risk prediction prototype, and academic intelligence platforms.",
   },
   {
     year: "2026",
     title: "Software Developer at Nex X Spark",
-    description: "Contributing to scalable software components, system integration, and responsive web applications.",
+    description:
+      "Contributing to scalable software components, system integration, and responsive web applications.",
   },
 ];
 
@@ -511,19 +644,23 @@ export const languages = [
 export const strengths = [
   {
     title: "Full-Stack Foundation",
-    description: "Hands-on project experience across React, TypeScript, Python, Django, and database integrations.",
+    description:
+      "Hands-on project experience across React, TypeScript, Python, Django, and database integrations.",
   },
   {
     title: "Applied AI Integration",
-    description: "Practical capabilities connecting machine learning models and computer vision pipelines to web interfaces.",
+    description:
+      "Practical capabilities connecting machine learning models and computer vision pipelines to web interfaces.",
   },
   {
     title: "Project-Centric Mindset",
-    description: "Focused on building complete, working applications that solve concrete business and educational challenges.",
+    description:
+      "Focused on building complete, working applications that solve concrete business and educational challenges.",
   },
   {
     title: "Fast Technical Learner",
-    description: "Quickly adapts to new languages, APIs, and frameworks through active hands-on implementation.",
+    description:
+      "Quickly adapts to new languages, APIs, and frameworks through active hands-on implementation.",
   },
 ];
 
@@ -566,7 +703,7 @@ export const testimonials = [
     quote:
       "Belgin demonstrates dedication to applying Python, React, and machine learning to build practical software applications.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
   },
 ];
-

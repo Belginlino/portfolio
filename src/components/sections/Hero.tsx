@@ -68,11 +68,14 @@ export function Hero() {
       <div className="pointer-events-none absolute top-10 left-1/3 -z-10 h-72 w-96 rounded-full bg-[#FF6A1A]/10 blur-[130px]" />
 
       <motion.div
-        style={isLowPower ? undefined : { scale: contentScale, opacity: contentOpacity, filter: contentBlur }}
+        style={
+          isLowPower
+            ? undefined
+            : { scale: contentScale, opacity: contentOpacity, filter: contentBlur }
+        }
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
       >
         <div className="grid items-center gap-10 md:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr_auto] lg:gap-10 xl:gap-12">
-          
           {/* LEFT: Text Content & CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -88,9 +91,14 @@ export function Hero() {
 
             {/* Oversized hero heading */}
             <h1 className="mt-4 font-hero text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase leading-[0.95] tracking-tight text-white break-words">
-              BELGIN <br />
-              <span className="text-white/90">LINO</span>
-              <span className="text-[#FF6A1A]">.</span>
+              <span className="sr-only">
+                Belgin Lino – AI &amp; Data Science Student and Full Stack Developer
+              </span>
+              <span aria-hidden="true">
+                BELGIN <br />
+                <span className="text-white/90">LINO</span>
+                <span className="text-[#FF6A1A]">.</span>
+              </span>
             </h1>
 
             {/* Role text with animated typewriter effect */}
@@ -139,7 +147,9 @@ export function Hero() {
 
             {/* Social Icons */}
             <div className="mt-8 flex items-center gap-3">
-              <span className="font-mono text-xs uppercase tracking-wider text-[#9A9A9A]">Follow:</span>
+              <span className="font-mono text-xs uppercase tracking-wider text-[#9A9A9A]">
+                Follow:
+              </span>
               {[
                 { Icon: Github, href: personalInfo.github, label: "GitHub Profile" },
                 { Icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn Profile" },
@@ -176,14 +186,19 @@ export function Hero() {
             <div className="group relative z-10 cursor-default max-w-full overflow-hidden rounded-2xl border border-white/10 bg-[#141414] shadow-2xl backdrop-blur transition-all duration-500 hover:border-[#FF6A1A]/60 hover:shadow-[0_0_35px_rgba(255,106,26,0.35)]">
               <img
                 src={heroPhoto}
-                alt="Belgin Lino SP"
+                alt="Belgin Lino - AI &amp; Data Science Student &amp; Full Stack Developer"
+                width={609}
+                height={913}
+                fetchPriority="high"
                 loading="eager"
                 className="h-72 w-64 sm:h-96 sm:w-80 max-w-full object-cover object-top filter grayscale contrast-125 transition-all duration-500 group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-30" />
               <div className="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-4 rounded-xl border border-white/10 bg-[#141414]/90 p-2 sm:p-2.5 backdrop-blur-md transition-all duration-300 group-hover:border-[#FF6A1A]/40">
-                <p className="font-mono text-xs font-semibold text-white">Belgin Lino SP</p>
-                <p className="font-mono text-[10px] text-[#9A9A9A]">AI &amp; Data Science Student | Full-Stack Dev</p>
+                <p className="font-mono text-xs font-semibold text-white">Belgin Lino</p>
+                <p className="font-mono text-[10px] text-[#9A9A9A]">
+                  AI &amp; Data Science Student | Full Stack Dev
+                </p>
               </div>
             </div>
           </motion.div>
@@ -216,7 +231,6 @@ export function Hero() {
               );
             })}
           </motion.div>
-
         </div>
       </motion.div>
     </section>
